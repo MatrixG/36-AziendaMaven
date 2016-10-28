@@ -22,8 +22,6 @@
 <script src="${pageContext.request.contextPath}/js/jquery.noty.js"></script>
 <!-- library for making tables responsive -->
 <script src="${pageContext.request.contextPath}/bower_components/responsive-tables/responsive-tables.js"></script>
-<!-- tour plugin -->
-<script src="${pageContext.request.contextPath}/bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js"></script>
 <!-- star rating plugin -->
 <script src="${pageContext.request.contextPath}/js/jquery.raty.min.js"></script>
 <!-- for iOS style toggle switch -->

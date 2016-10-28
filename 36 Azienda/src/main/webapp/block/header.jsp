@@ -19,7 +19,6 @@
     <link href='${pageContext.request.contextPath}/bower_components/chosen/chosen.min.css' rel='stylesheet'>
     <link href='${pageContext.request.contextPath}/bower_components/colorbox/example3/colorbox.css' rel='stylesheet'>
     <link href='${pageContext.request.contextPath}/bower_components/responsive-tables/responsive-tables.css' rel='stylesheet'>
-    <link href='${pageContext.request.contextPath}/bower_components/bootstrap-tour/build/css/bootstrap-tour.min.css' rel='stylesheet'>
     <link href='${pageContext.request.contextPath}/css/jquery.noty.css' rel='stylesheet'>
     <link href='${pageContext.request.contextPath}/css/noty_theme_default.css' rel='stylesheet'>
     <link href='${pageContext.request.contextPath}/css/elfinder.min.css' rel='stylesheet'>

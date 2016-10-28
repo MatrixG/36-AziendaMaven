@@ -1,36 +1,54 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    pageEncoding="ISO-8859-1"%>
+<%@ page isELIgnored="false" %>    
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="Stylesheet" type="text/css" href="css/login.css">
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-
-<title>Pagina di Login</title>
+<jsp:include page="block/header.jsp"></jsp:include>
+<title>Pagina di login</title>
 </head>
 <body>
 
-	<div id="Container" >
-		<br><h1>Login Page</h1>
+<div class="ch-container" >
+    <div class="row">
+        
+    <div class="row">
+        <div class="col-md-12 center login-header">
+        </div>
+        <!--/span-->
+    </div><!--/row-->
 
-		<form action="doLogin.jsp" method="post">
+    <div class="row">
+        <div class="well col-md-5 center login-box">
 
-			<br>
-			Username: <input type="text" name="username" /><br ><br>
-			Password:&nbsp; <input type="password" name="password" /><br><br>
-			<br><input type="submit" value="Login" style="height:25px; width:100px " /><br>
+            <form class="form-horizontal" action="doLogin.jsp" method="post">
+                <fieldset>
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>
+                        <input type="text" class="form-control" placeholder="Username" name="username">
+                    </div>
+                    <div class="clearfix"></div><br>
 
-			<c:if test="${error != null}">
-			<c:choose>
-				<c:when test="${error == 1 }">
-					<br><c:out value="Username o password errati!"></c:out>
-				</c:when>
-			</c:choose>
-			</c:if>	
-			
-		</form>
-	</div>
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock red"></i></span>
+                        <input type="password" class="form-control" placeholder="Password" name="password">
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="clearfix"></div>
+
+                    <p class="center col-md-5">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+        <!--/span-->
+    </div><!--/row-->
+</div><!--/fluid-row-->
+
+</div><!--/.fluid-container-->
+
+
 </body>
 </html>
