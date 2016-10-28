@@ -1,0 +1,23 @@
+#Container {
+	width: 100%;
+	border: 10px solid blue;
+	background: #80ffff;
+	position: fixed;
+	top: 30%;
+	left: 30%;
+	height: 300px;
+	width: 500px;
+	text-align: center;
+	
+	
+}
+
+
+body {
+	background-color: black;
+	margin: 0;
+}
+
+.clear {
+	clear: both;
+}
