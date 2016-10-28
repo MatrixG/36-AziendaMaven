@@ -3,7 +3,7 @@
 
 
 <footer class="row" >
-        <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy;Alessandro Boaretto 2016</p>
+        <p class="col-md-9 col-sm-9 col-xs-12 copyright">&nbsp;&nbsp;&copy; Alessandro Boaretto 2016</p>
 
-        <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Powered by: Charisma</p>
+        <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Powered by: Charisma&nbsp;&nbsp;&nbsp;</p>
     </footer>
