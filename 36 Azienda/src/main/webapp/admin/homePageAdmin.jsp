@@ -1,7 +1,12 @@
 <!DOCTYPE html>
+<%-- <%@ page import="it.alfasoft.bean.Utente"%> --%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<c:choose>
+  <c:when test="${utente.getRuolo() == 0 && utente.isValid()}">
+  
 <html>
 <jsp:include page="../block/header.jsp"></jsp:include>
 
@@ -42,3 +47,9 @@
 <jsp:include page="../block/scriptEnd.jsp"></jsp:include>
 </body>
 </html>    
+
+</c:when>
+	<c:otherwise>
+		<c:redirect url="../sessioneScaduta.jsp"></c:redirect>
+  	</c:otherwise>
+</c:choose>

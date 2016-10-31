@@ -1,8 +1,8 @@
 package it.alfasoft.bean;
 
 import java.io.Serializable;
-
 import javax.persistence.*;
+import it.alfasoft.utils.CheckValues;
 
 @Entity
 @Inheritance (strategy = InheritanceType.JOINED)
@@ -86,5 +86,14 @@ public class Utente implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public boolean isValid() {
+		
+		if (CheckValues.checkString(nome) && CheckValues.checkString(cognome) &&
+				CheckValues.checkString(username) && CheckValues.checkString(password))
+			return true;
+		
+		return false;
 	}
 }
