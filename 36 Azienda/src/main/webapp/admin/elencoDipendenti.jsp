@@ -1,83 +1,84 @@
-<%@ page import = "it.alfasoft.bean.Dipendente" %>
+<!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<%@ page import="it.alfasoft.bean.Cliente"%>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <c:choose>
-  <c:when test="${utente.isValid() && utente.getRuolo() == 0}">
+	<c:when test="${utente.getRuolo() == 0 && utente.isValid()}">
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="Stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/styles.css">
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+		<html>
+<jsp:include page="../block/header.jsp"></jsp:include>
 
-<title>Admin Page</title>
-</head>
 <body>
+	<jsp:include page="../block/topBar.jsp"></jsp:include>
 
-	<div id="Container">
+	<div class="row">
 
-		<div id="header">
-			<h1>Home Page Admin</h1>
+		<jsp:include page="menu/menuLaterale.jsp"></jsp:include>
 
-		</div>
+		<div id="content" class="col-lg-10 col-sm-10">
+			<!-- content starts -->
+			<div>
+				<ul class="breadcrumb">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Dashboard</a></li>
+				</ul>
+			</div>
 
+			<div class="row" id="prova">
 
-		<div class="menu">
+				<div class="box col-md-9">
+					<div class="box-inner">
+						<div class="box-header well" data-original-title="">
+							<h2>
+								<i class="glyphicon glyphicon-user"></i> Elenco dei Dipendenti
+							</h2>
+						</div>
+					</div>
+					<div class="box-content"></div>
+					<table class="table table-striped table-bordered responsive">
+						<thead>
+							<tr>
+								<th>Nome</th>
+								<th>Cognome</th>
+								<th>Email</th>
+								<th>Posizione</th>
+								<th>Stipendio</th>
+							</tr>
+						</thead>
+						<tbody>
 
-			<jsp:include page="menu/menuLateraleAdmin.jsp"></jsp:include>
-
-		</div>
-		<div id="content">
-			<h1>Elenco dipendenti</h1>
-
-	<table border="1px" align="center">
-
-		<thead>
-
-			<tr>
-              <th>Nome</th> <th>Cognome</th>
-              <th>Username</th> <th>Posizione</th>
-              <th>Stipendio</th>
-			</tr>
-
-		</thead>
-		
-	     <c:forEach var="d"   items="${dipendenti}">
-	        <tr>
-	        <td>
-	        ${d.nome}
-	        </td> 
-	        <td>
-	        ${d.cognome}
-	        </td>
-	        <td>
-	        ${d.username}
-	        </td>
-	        <td>
-	        ${d.posizione}
-	        </td>
-	        <td>
-	        ${d.stipendio}
-	        </td>
-	        </tr>
-	     </c:forEach>
-	
-	</table>
-		</div>
-		<div id="footer2">
-			<h1>Footer</h1>
+							<c:forEach var="d" items="${dipendenti}">
+								<tr>
+									<td>${d.nome}</td>
+									<td>${d.cognome}</td>
+									<td>${d.username}</td>
+									<td>${d.posizione}</td>
+									<td>${d.stipendio}</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--/#content.col-md-0-->
 
 		</div>
 	</div>
+
+
+	<hr>
+	<jsp:include page="../block/footer.jsp"></jsp:include>
+
+	<jsp:include page="../block/scriptEnd.jsp"></jsp:include>
 </body>
-</html>
+		</html>
 
 	</c:when>
 	<c:otherwise>
 		<c:redirect url="../sessioneScaduta.jsp"></c:redirect>
-  	</c:otherwise>
+	</c:otherwise>
 </c:choose>

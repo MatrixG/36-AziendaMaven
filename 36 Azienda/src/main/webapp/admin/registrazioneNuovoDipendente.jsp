@@ -1,64 +1,113 @@
+<!DOCTYPE html>
+<%-- <%@ page import="it.alfasoft.bean.Utente"%> --%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html >
-
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="Stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/styles.css">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<title>Admin</title>
-</head>
+<c:choose>
+	<c:when test="${utente.getRuolo() == 0 && utente.isValid()}">
+
+		<html>
+<jsp:include page="../block/header.jsp"></jsp:include>
+
 <body>
-	<div id="Container">
+	<jsp:include page="../block/topBar.jsp"></jsp:include>
 
-		<div id="header">
-			<h1>Home Page Admin</h1>
+	<div class="row">
 
-		</div>
+		<jsp:include page="menu/menuLaterale.jsp"></jsp:include>
 
-		<div class="menu">
+		<div id="content" class="col-lg-10 col-sm-10">
+			<!-- content starts -->
+			<div>
+				<ul class="breadcrumb">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Dashboard</a></li>
+				</ul>
+			</div>
 
-			<jsp:include page="menu/menuLateraleAdmin.jsp"></jsp:include>
+			<div class="row">
 
-		</div>
-		<div id="content">
-			<h1>Registrazione Nuovo Dipendente</h1>
-			
-			<form action="do/doRegistrazioneDipendente.jsp" method="post">
+				<div id="content">
+					<div class="box col-md-6">
+						<div class="box-inner">
+							<div class="box-header well">
+								<h2>
+									<i class="glyphicon glyphicon-edit"></i>&nbsp;&nbsp;Registrazione
+									Nuovo Dipendente
+								</h2>
+							</div>
+							<div class="box-content">
+								<form role="form" action="do/doRegistrazioneDipendente.jsp"
+									method="post">
+									<div class="form-group">
+										<label for="inputNome">Nome:</label> <input type="text"
+											class="form-control" id="inputNome" placeholder="Nome"
+											name="nome">
+									</div>
+									<div class="form-group">
+										<label for="inputCognome">Cognome:</label> <input type="text"
+											class="form-control" id="inputCognome" placeholder="Cognome"
+											name="cognome">
+									</div>
+									<div class="form-group">
+										<label for="inputStipendio">Stipendio:</label> <input
+											type="text" class="form-control" id="inputStipendio"
+											placeholder="Stipendio" name="stipendio">
+									</div>
+									<div class="form-group">
+										<label for="inputPosizione">Posizione:</label> <input type="text"
+											class="form-control" id="inputPosizione" placeholder="Posizione"
+											name="posizione">
+									</div>
+									<div class="form-group">
+										<label for="inputEmail">Email address:</label> <input
+											type="email" class="form-control" id="inputEmail"
+											placeholder="Enter email" name="username">
+									</div>
+									<div class="form-group">
+										<label for="inputPassword">Password:</label> <input
+											type="password" class="form-control" id="inputPassword"
+											placeholder="Password" name="password">
+									</div>
+									<button type="submit" class="btn btn-default">Registra</button>
+								</form>
+							</div>
 
-				Nome: <input type="text" name="nome" required /><br>
-				Cognome: <input type="text" name="cognome" required /><br>
-				Stipendio: <input type="text" name="stipendio" /><br>
-				Posizione: <input type="text" name="posizione" required /><br>
-				Username: <input type="text" name="username" required /><br>
-				Password: <input type="password" name="password" required /><br>
-				
-				<input type="submit" value="Registra" />
-				
-					
-			</form>
-				<%
-			if (request.getAttribute("error") != null){
-			%>		
-			<c:choose>
-				<c:when test="${error == 1}">
-       				<br>Errore nell'inserimento del Dipendente!
+							<%
+								if (request.getAttribute("error") != null) {
+							%>
+							<c:choose>
+								<c:when test="${error == 1}">
+									<br>Errore nell'inserimento del Dipendente!
     			</c:when>
-				<c:when test="${error == 2}">
-       				<br>Username già utilizzato
+								<c:when test="${error == 2}">
+									<br>Username già utilizzato
    				</c:when>
-			</c:choose>
-			<%
-			}
-			%>
+							</c:choose>
+							<%
+								}
+							%>
 
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div id="footer2">
-			<h1>Footer</h1>
+		<!--/#content.col-md-0-->
 
-		</div>
 	</div>
+
+
+	<hr>
+	<jsp:include page="../block/footer.jsp"></jsp:include>
+
+	<jsp:include page="../block/scriptEnd.jsp"></jsp:include>
 </body>
-</html>
+		</html>
+
+	</c:when>
+	<c:otherwise>
+		<c:redirect url="../sessioneScaduta.jsp"></c:redirect>
+	</c:otherwise>
+</c:choose>

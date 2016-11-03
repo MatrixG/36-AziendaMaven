@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<%-- <%@ page import="it.alfasoft.bean.Utente"%> --%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -33,10 +32,6 @@
 
 <div class = "row" id="prova">
 
-<!-- 	devo scrivere qualcosa per ogni pagina -->
-<a id='linkThatChangesTheWorld' href=''>Click Me</a>
-<p id="test"></p>
-
 </div>
     </div><!--/#content.col-md-0-->
 
@@ -55,14 +50,3 @@
 		<c:redirect url="../sessioneScaduta.jsp"></c:redirect>
   	</c:otherwise>
 </c:choose>
-
-<script>
-$(function(){
-
-	$('#linkThatChangesTheWorld').click( function() {
-	    $('#test').html('I want my body this way.');
-	});
-
-	});
-
-</script>
