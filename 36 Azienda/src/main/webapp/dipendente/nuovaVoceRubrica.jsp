@@ -1,71 +1,95 @@
+<!DOCTYPE html>
+<%-- <%@ page import="it.alfasoft.bean.Utente"%> --%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html >
 
 <c:choose>
-  <c:when test="${utente.isValid() && utente.getRuolo() == 1}">
+	<c:when test="${utente.getRuolo() == 1 && utente.isValid()}">
 
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="Stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/styles.css">
+		<html>
+<jsp:include page="../block/header.jsp"></jsp:include>
 
-<title>Aggiungi una contatto</title>
-</head>
 <body>
+	<jsp:include page="../block/topBar.jsp"></jsp:include>
 
-	<div id="Container">
+	<div class="row">
 
-		<div id="header">
-			<h1>Pagina personale di <%= request.getAttribute("name")%></h1>
+		<jsp:include page="menu/menuLaterale.jsp"></jsp:include>
 
-		</div>
+		<div id="content" class="col-lg-10 col-sm-10">
+			<!-- content starts -->
+			<div>
+				<ul class="breadcrumb">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Dashboard</a></li>
+				</ul>
+			</div>
 
+			<div class="row">
 
-		<div class="menu">
+				<div id="content">
+					<div class="box col-md-6">
+						<div class="box-inner">
+							<div class="box-header well">
+								<h2>
+									<i class="glyphicon glyphicon-edit"></i>&nbsp;&nbsp;Aggiungi un
+									Contatto
+								</h2>
+							</div>
+							<div class="box-content">
+								<form role="form" action="do/doAggiungiVoce.jsp" method="post">
+									<div class="form-group">
+										<label for="inputNome">Nome:</label> <input type="text"
+											class="form-control" id="inputNome" placeholder="Nome"
+											name="nome">
+									</div>
+									<div class="form-group">
+										<label for="inputCognome">Cognome:</label> <input type="text"
+											class="form-control" id="inputCognome" placeholder="Cognome"
+											name="cognome">
+									</div>
+									<div class="form-group">
+										<label for="inputTelefono">Telefono:</label> <input
+											type="text" class="form-control" id="inputTelefono"
+											placeholder="Telefono" name="telefono">
+									</div>
+									<div align="right">
+										<button type="submit" class="btn btn-default">Aggiungi</button>
+									</div>
+								</form>
+							</div>
 
-			<jsp:include page="menu/menuLateraleDipendente.jsp"></jsp:include>
-
-		</div>
-		<div id="content">
-			<h1>Aggiungi un contatto</h1>
-
-			<form action="do/doAggiungiVoce.jsp" method="post">
-
-				Nome: <input type="text" name="nome" required  /><br> 
-				Cognome: <input type="text" name="cognome" /><br> 
-				Telefono: <input type="text" name="telefono" required /><br><br>
-				
-				<input type="submit" value="Aggiungi Contatto" />
-			</form>
-
-			<%
-			if (request.getAttribute("error") != null){
-			%>		
-			<c:choose>
-				<c:when test="${error == 1}">
-       				<br>Errore nell'inserimento del Contatto!
+							<%
+								if (request.getAttribute("error") != null) {
+							%>
+							<c:choose>
+								<c:when test="${error == 1}">
+									<br>Errore nell'inserimento del Contatto!
     			</c:when>
-			</c:choose>
-			<%
-			}
-			%>
-
+							</c:choose>
+							<%
+								}
+							%>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div id="footer2">
-			<h1>Footer</h1>
-
-		</div>
-
+		<!--/#content.col-md-0-->
 
 	</div>
-	<!--  end of container -->
-</body>
-</html>
 
- </c:when>
-<c:otherwise>
-	<c:redirect url="../sessioneScaduta.jsp"></c:redirect>
-  </c:otherwise>
+
+	<hr>
+	<jsp:include page="../block/footer.jsp"></jsp:include>
+
+	<jsp:include page="../block/scriptEnd.jsp"></jsp:include>
+</body>
+		</html>
+
+	</c:when>
+	<c:otherwise>
+		<c:redirect url="../sessioneScaduta.jsp"></c:redirect>
+	</c:otherwise>
 </c:choose>

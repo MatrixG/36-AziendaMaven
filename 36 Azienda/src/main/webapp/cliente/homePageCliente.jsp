@@ -1,49 +1,52 @@
-<%@ page import="it.alfasoft.bean.Cliente"%>
+<!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <c:choose>
-  <c:when test="${utente.isValid() && utente.getRuolo() == 2}">	
-
+  <c:when test="${utente.getRuolo() == 2 && utente.isValid()}">
+  
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="Stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/styles.css">
+<jsp:include page="../block/header.jsp"></jsp:include>
 
-<title>Home Cliente</title>
-</head>
 <body>
+<jsp:include page="../block/topBar.jsp"></jsp:include>
 
-	<div id="Container">
-<%-- 		<%Cliente c = (Cliente) session.getAttribute("cliente"); %> <%= c.getNome()  %> --%>
-		
-		<div id="header">
-			<h1>Benvenuto <c:out value=" ${utente.getNome()}"></c:out></h1>
+<div class = "row">
 
-		</div>
+<jsp:include page="menu/menuLaterale.jsp"></jsp:include>
 
+<div id="content" class="col-lg-10 col-sm-10">
+            <!-- content starts -->
+            <div>
+    <ul class="breadcrumb">
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li>
+            <a href="#">Dashboard</a>
+        </li>
+    </ul>
+</div>
 
-		<div class="menu">
+<div class = "row" id="prova">
 
-			<jsp:include page="menu/menuLateraleCliente.jsp"></jsp:include>
+</div>
+    </div><!--/#content.col-md-0-->
 
-		</div>
-		<div id="content">
-			<h1>Welcome to Cliente HomePage</h1>
-		</div>
-		<div id="footer">
-			<h1>Footer</h1>
+</div>
+  
+    
+<hr>
+<jsp:include page="../block/footer.jsp"></jsp:include>
 
-		</div>
-	</div>
+<jsp:include page="../block/scriptEnd.jsp"></jsp:include>
 </body>
-</html>
+</html>    
 
- </c:when>
+</c:when>
 	<c:otherwise>
 		<c:redirect url="../sessioneScaduta.jsp"></c:redirect>
-	  </c:otherwise>
+  	</c:otherwise>
 </c:choose>

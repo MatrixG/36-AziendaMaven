@@ -8,7 +8,7 @@
 		<div class="nav-canvas">
 			<div class="nav-sm nav nav-stacked"></div>
 			<ul class="nav nav-pills nav-stacked main-menu">
-				<li class="nav-header">Main</li>
+				<li class="nav-header">Menù</li>
 				<li><a class="ajax-link"
 					href="${pageContext.request.contextPath}/admin/homePageAdmin.jsp"><i
 						class="glyphicon glyphicon-home"></i><span> Home</span></a></li>

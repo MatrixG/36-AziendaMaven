@@ -51,9 +51,9 @@
 											name="cognome">
 									</div>
 									<div class="form-group">
-										<label for="inputRagSociale">Ragione Sociale:</label> <input type="text"
-											class="form-control" id="inputRagSociale" placeholder="Ragione Sociale"
-											name="ragSociale">
+										<label for="inputRagSociale">Ragione Sociale:</label> <input
+											type="text" class="form-control" id="inputRagSociale"
+											placeholder="Ragione Sociale" name="ragSociale">
 									</div>
 									<div class="form-group">
 										<label for="inputpIva">Partita IVA:</label> <input type="text"
@@ -70,7 +70,9 @@
 											type="password" class="form-control" id="inputPassword"
 											placeholder="Password" name="password">
 									</div>
-									<button type="submit" class="btn btn-default">Registra</button>
+									<div align="right">
+										<button type="submit" class="btn btn-default">Registra</button>
+									</div>
 								</form>
 							</div>
 

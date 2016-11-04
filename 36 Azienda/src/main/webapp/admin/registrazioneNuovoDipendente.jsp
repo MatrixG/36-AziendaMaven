@@ -56,9 +56,9 @@
 											placeholder="Stipendio" name="stipendio">
 									</div>
 									<div class="form-group">
-										<label for="inputPosizione">Posizione:</label> <input type="text"
-											class="form-control" id="inputPosizione" placeholder="Posizione"
-											name="posizione">
+										<label for="inputPosizione">Posizione:</label> <input
+											type="text" class="form-control" id="inputPosizione"
+											placeholder="Posizione" name="posizione">
 									</div>
 									<div class="form-group">
 										<label for="inputEmail">Email address:</label> <input
@@ -70,7 +70,9 @@
 											type="password" class="form-control" id="inputPassword"
 											placeholder="Password" name="password">
 									</div>
-									<button type="submit" class="btn btn-default">Registra</button>
+									<div align="right">
+										<button type="submit" class="btn btn-default">Registra</button>
+									</div>
 								</form>
 							</div>
 
