@@ -10,7 +10,7 @@
 
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
-                        <li class="nav-header">Main</li>
+                        <li class="nav-header">Menù</li>
                         <li><a class="ajax-link" href="homePageAdmin.jsp"><i class="glyphicon glyphicon-home"></i><span> Home</span></a></li>
                         <li><a class="ajax-link" href="index.html"><i class="glyphicon glyphicon-plus"></i><span> Nuovo Utente</span></a></li>
                         <li><a class="ajax-link" href="index.html"><i class="glyphicon glyphicon-list"></i><span> Elenco Utenti</span></a></li>

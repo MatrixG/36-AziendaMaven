@@ -14,7 +14,7 @@
 						class="glyphicon glyphicon-home"></i><span> Home</span></a></li>
 				<li class="accordion"><a href="#"><i
 						class="glyphicon glyphicon-plus"></i><span> Aggiungi</span></a>
-					<ul class="nav nav-pills nav-stacked">
+					<ul class="nav nav-pills nav-stacked" id="menuAggiungi">
 						<li><a
 							href="${pageContext.request.contextPath}/admin/registrazioneNuovoCliente.jsp">Cliente</a></li>
 						<li><a href="${pageContext.request.contextPath}/admin/registrazioneNuovoDipendente.jsp">Dipendente</a></li>

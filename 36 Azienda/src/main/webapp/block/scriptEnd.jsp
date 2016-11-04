@@ -3,6 +3,18 @@
 
 <!-- external javascript -->
 
+<script>
+$(document).ready(function(){
+    $("#menuAggiungi").hover(function(){
+        $(this).slideDown('fast').show();
+        }, function(){
+        $(this).hide();
+    });
+});
+</script>
+
+
+
 <script src="${pageContext.request.contextPath}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!-- library for cookie management -->
