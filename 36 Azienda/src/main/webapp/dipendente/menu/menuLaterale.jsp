@@ -16,7 +16,7 @@
 					href="${pageContext.request.contextPath}/dipendente/nuovaVoceRubrica.jsp"><i
 						class="glyphicon glyphicon-plus"></i><span> Nuovo Contatto</span></a></li>
 				<li><a class="ajax-link"
-					href="${pageContext.request.contextPath}/dipendente/elencoContatti.jsp"><i
+					href="${pageContext.request.contextPath}/dipendente/do/doElencoContatti.jsp"><i
 						class="glyphicon glyphicon-list"></i><span> Lista Contatti</span></a></li>
 			</ul>
 		</div>

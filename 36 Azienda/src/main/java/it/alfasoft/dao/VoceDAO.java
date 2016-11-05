@@ -1,12 +1,11 @@
-package it.alfasoft.rubrica.dao;
+package it.alfasoft.dao;
 
+import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
+import it.alfasoft.bean.Voce;
 import it.alfasoft.utils.HibernateUtil;
-
-import it.alfasoft.rubrica.bean.Voce;
 
 public class VoceDAO {
 
@@ -104,5 +103,33 @@ public class VoceDAO {
 			session.close();
 		}
 		return result;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Voce> getVoci(int id) {
+
+		Session session = HibernateUtil.openSession();
+
+		String hql = "FROM Voce WHERE utente_id = :id";
+
+		Transaction tx = null;
+		List<Voce> result = null;
+
+		try {
+
+			tx = session.getTransaction();
+			tx.begin();
+			Query query = session.createQuery(hql);
+			query.setParameter("id", id);
+			result = (List<Voce>) query.list();
+			tx.commit();
+
+		} catch (Exception e) {
+			tx.rollback();
+		} finally {
+			session.close();
+		}
+		return result;
+		
 	}
 }

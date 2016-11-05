@@ -1,23 +1,24 @@
-package it.alfasoft.rubrica.bean;
+package it.alfasoft.bean;
 
 import javax.persistence.Entity;
-import it.alfasoft.bean.IsValid;
+
 import it.alfasoft.utils.CheckValues;
 
 import javax.persistence.*;
 
 @Entity
+@SequenceGenerator(name = "rubrica_seq", sequenceName = "rubrica_seq", allocationSize    = 1)
 public class Voce implements IsValid {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "rubrica_seq")
 	private int id_Voce;
 	private String nome;
 	private String cognome;
 	private String telefono;
-	
+
 	@ManyToOne
-	private Rubrica rubrica;
+	private Utente utente;
 
 	public Voce() {
 
@@ -31,7 +32,7 @@ public class Voce implements IsValid {
 		this.cognome = cognome;
 		this.telefono = telefono;
 	}
-	
+
 	public int getId_Voce() {
 		return id_Voce;
 	}
@@ -64,18 +65,16 @@ public class Voce implements IsValid {
 		this.telefono = telefono;
 	}
 
-	public Rubrica getRubrica() {
-		return rubrica;
+	public Utente getUtente() {
+		return utente;
 	}
 
-	public void setRubrica(Rubrica rubrica) {
-		this.rubrica = rubrica;
+	public void setUtente(Utente utente) {
+		this.utente = utente;
 	}
 
-	
 	public boolean isValid() {
-		if (CheckValues.checkString(nome) && CheckValues.checkString(cognome) &&
-				CheckValues.checkString(telefono))
+		if (CheckValues.checkString(nome) && CheckValues.checkString(cognome) && CheckValues.checkString(telefono))
 			return true;
 		return false;
 	}

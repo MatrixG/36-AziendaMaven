@@ -6,12 +6,12 @@ import it.alfasoft.utils.CheckValues;
 
 @Entity
 @Inheritance (strategy = InheritanceType.JOINED)
-//@DiscriminatorColumn (discriminatorType = DiscriminatorType.STRING)
+@SequenceGenerator(name = "user_seq", sequenceName = "user_seq", allocationSize = 1, initialValue = 2)
 public class Utente implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue (strategy = GenerationType.AUTO)
+	@GeneratedValue (strategy = GenerationType.SEQUENCE, generator = "user_seq")
 	protected int id;
 	protected String cognome;
 	protected String nome;

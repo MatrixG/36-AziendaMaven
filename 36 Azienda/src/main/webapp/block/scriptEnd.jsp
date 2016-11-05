@@ -4,13 +4,25 @@
 <!-- external javascript -->
 
 <script>
-$(document).ready(function(){
-    $("#menuAggiungi").hover(function(){
-        $(this).slideDown('fast').show();
-        }, function(){
-        $(this).hide();
+// $(document).ready(function(){
+//     $("#menuAggiungi").mouseover(function(){
+//     	$(this).trigger("click");
+//         }
+    
+    
+    /*  ,function(){ */
+        /* $(this).hide(); */
+  //  });
+    
+    
+  /*   $(document).ready(function(){
+        $( ".accordion-toggle" ).mouseover(function(){
+           $( ".accordion-toggle" ).trigger( "click" );
+        });
     });
-});
+    
+    alert("entrato"); */
+//});
 </script>
 
 

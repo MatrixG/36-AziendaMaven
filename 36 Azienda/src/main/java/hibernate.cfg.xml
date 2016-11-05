@@ -31,10 +31,8 @@
 		<property name="hbm2ddl.auto">update</property>
 		
 		<mapping class="it.alfasoft.bean.Utente" />
-		<mapping class="it.alfasoft.bean.Admin" />
 		<mapping class="it.alfasoft.bean.Cliente" />
 		<mapping class="it.alfasoft.bean.Dipendente" />
-		<mapping class="it.alfasoft.rubrica.bean.Voce" />
-		<mapping class="it.alfasoft.rubrica.bean.Rubrica" />
+		<mapping class="it.alfasoft.bean.Voce" />
 	</session-factory>
 </hibernate-configuration>

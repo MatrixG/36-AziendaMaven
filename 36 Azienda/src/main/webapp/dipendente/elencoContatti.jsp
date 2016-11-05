@@ -49,15 +49,13 @@
 						</thead>
 						<tbody>
 
-<%-- 							<c:forEach var="c" items="${clienti}"> --%>
-<!-- 								<tr> -->
-<%-- 									<td>${c.nome}</td> --%>
-<%-- 									<td>${c.cognome}</td> --%>
-<%-- 									<td>${c.username}</td> --%>
-<%-- 									<td>${c.pIva}</td> --%>
-<%-- 									<td>${c.ragSociale}</td> --%>
-<!-- 								</tr> -->
-<%-- 							</c:forEach> --%>
+							<c:forEach var="v" items="${voci}">
+								<tr>
+									<td>${v.nome}</td>
+									<td>${v.cognome}</td>
+									<td>${v.telefono}</td>
+								</tr>
+							</c:forEach>
 
 						</tbody>
 					</table>
