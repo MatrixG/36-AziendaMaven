@@ -2,9 +2,18 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page import = "it.alfasoft.bean.Cliente" %>
+<%@ page import="it.alfasoft.bean.Cliente"%>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- <script type="text/javascript"> -->
+
+// $(document).ready(function() {
+//     $('#tableClienti').DataTable();
+// } );
+
+<!-- </script> -->
+
 
 <c:choose>
 	<c:when test="${utente.getRuolo() == 0 && utente.isValid()}">
@@ -39,25 +48,31 @@
 						</div>
 					</div>
 					<div class="box-content"></div>
-					<table class="table table-striped table-bordered responsive">
+					<table id = "tableClienti" class="table table-striped table-bordered bootstrap-datatable datatable responsive">
 						<thead>
 							<tr>
-								<th>Nome</th>
-								<th>Cognome</th>
-								<th>Email</th>
-								<th>Partita IVA</th>
-								<th>Ragione Sociale</th>
+								<th><div align="center">Nome</div></th>
+								<th><div align="center">Cognome</div></th>
+								<th><div align="center">Email</div></th>
+								<th><div align="center">Partita IVA</div></th>
+								<th><div align="center">Ragione Sociale</div></th>
+								<th><div align="center">Modifica</div></th>
 							</tr>
 						</thead>
 						<tbody>
 
 							<c:forEach var="c" items="${clienti}">
 								<tr>
-									<td>${c.nome}</td>
-									<td>${c.cognome}</td>
-									<td>${c.username}</td>
-									<td>${c.pIva}</td>
-									<td>${c.ragSociale}</td>
+									<td><div align="center">${c.nome}</div></td>
+									<td><div align="center">${c.cognome}</div></td>
+									<td><div align="center">${c.username}</div></td>
+									<td><div align="center">${c.pIva}</div></td>
+									<td><div align="center">${c.ragSociale}</div></td>
+									<td class="center"><div align="center"><a class="btn btn-info" href="#"> <i
+											class="glyphicon glyphicon-edit icon-white"></i> Edit
+									</a> <a class="btn btn-danger" href="#"> <i
+											class="glyphicon glyphicon-trash icon-white"></i> Delete
+									</a></div></td>
 								</tr>
 							</c:forEach>
 
