@@ -19,6 +19,7 @@ public class Utente implements Serializable {
 	protected String cognome;
 	protected String nome;
 	protected int ruolo;
+	@Column(unique = true)
 	protected String username;
 	protected String password;
 

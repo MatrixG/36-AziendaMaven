@@ -85,8 +85,36 @@ public class DipendenteDAO {
 		return result;
 	}
 
-	public boolean aggiornaDipendente(Dipendente o) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean aggiornaDipendente(Dipendente dIn, String email) {
+		
+		Session session = HibernateUtil.openSession();
+
+		Transaction tx = null;
+		boolean result = false;
+		
+		try {
+
+			tx = session.getTransaction();
+			tx.begin();
+			Dipendente d = leggiDipendente(email);
+			if (d != null){
+				d.setCognome(dIn.getCognome());
+				d.setNome(dIn.getNome());
+				d.setStipendio(dIn.getStipendio());
+				d.setPosizione(dIn.getPosizione());
+				d.setUsername(dIn.getUsername());
+			}
+
+			session.update(d);
+			tx.commit();
+			session.flush();
+			result = true;
+
+		} catch (Exception e) {
+			tx.rollback();
+		} finally {
+			session.close();
+		}
+		return result;
 	}
 }

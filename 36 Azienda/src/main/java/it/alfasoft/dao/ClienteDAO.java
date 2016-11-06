@@ -90,7 +90,7 @@ public class ClienteDAO {
 		return result;
 	}
 
-	public boolean aggiornaCliente(Cliente o) {
+	public boolean aggiornaCliente(Cliente d, String email) {
 		// TODO Auto-generated method stub
 		return false;
 	}

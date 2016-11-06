@@ -82,18 +82,20 @@ public class Servizi {
 		return PSWEncoding.codificatePass(psw);
 	}
 
+	//Metodo per cancellare un utente
 	public boolean cancellaUtente(String email) {
 		
 		return uDAO.rimuoviUtente(email);
 	}
 
-	public boolean modificaUtente(Object o, int ruolo) {
+	//Metodo per modificare un utente
+	public boolean modificaUtente(Object o, int ruolo, String email) {
 		switch (ruolo) {
 
 		case 1:
-			return dDAO.aggiornaDipendente((Dipendente)o);
+			return dDAO.aggiornaDipendente((Dipendente)o, email);
 		case 2:
-			return cDAO.aggiornaCliente((Cliente)o);
+			return cDAO.aggiornaCliente((Cliente)o, email);
 		}
 		return false;
 	}
