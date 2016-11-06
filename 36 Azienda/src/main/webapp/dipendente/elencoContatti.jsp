@@ -28,7 +28,7 @@
 				</ul>
 			</div>
 
-			<div class="row" id="prova">
+			<div class="row">
 
 				<div class="box col-md-9">
 					<div class="box-inner">

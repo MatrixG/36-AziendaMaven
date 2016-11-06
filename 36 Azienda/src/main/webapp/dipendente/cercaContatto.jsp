@@ -60,7 +60,7 @@
 						</div>
 					</div>
 
-					<div class="box col-md-9" >
+					<div class="box col-md-9"  id="prova" hidden="true" >
 						<div class="box-inner">
 							<div class="box-header well" data-original-title="">
 								<h2>
@@ -69,7 +69,7 @@
 							</div>
 						</div>
 						<div class="box-content"></div>
-						<table class="table table-striped table-bordered responsive" id = "myTable">
+						<table class="table table-striped table-bordered responsive">
 							<thead>
 								<tr>
 									<th>Nome</th>
@@ -77,7 +77,7 @@
 									<th>Telefono</th>
 								</tr>
 							</thead>
-							<tbody>
+							<tbody id = "myTable">
 
 
 
