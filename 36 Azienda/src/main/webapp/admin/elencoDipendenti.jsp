@@ -100,6 +100,55 @@
 		</div>
 	</div>
 
+	<div class="modal fade" id="modalModify" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h3>Modifica Dipendente</h3>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="inputNome">Nome:</label> <input type="text"
+							class="form-control" id="inputNome" placeholder="Nome"
+							name="nome" >
+					</div>
+					<div class="form-group">
+						<label for="inputCognome">Cognome:</label> <input type="text"
+							class="form-control" id="inputCognome" placeholder="Cognome"
+							name="cognome">
+					</div>
+					<div class="form-group">
+						<label for="inputStipendio">Stipendio:</label> <input type="text"
+							class="form-control" id="inputStipendio" placeholder="Stipendio"
+							name="stipendio">
+					</div>
+					<div class="form-group">
+						<label for="inputPosizione">Posizione:</label> <input type="text"
+							class="form-control" id="inputPosizione" placeholder="Posizione"
+							name="posizione">
+					</div>
+					<div class="form-group">
+						<label for="inputEmail">Email address:</label> <input type="email"
+							class="form-control" id="inputEmail" placeholder="Enter email"
+							name="username">
+					</div>
+					<div class="form-group">
+						<label for="inputPassword">Password:</label> <input
+							type="password" class="form-control" id="inputPassword"
+							placeholder="Password" name="password">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<a href="#" class="btn btn-default" data-dismiss="modal">Annulla</a>
+					<a href="#" class="btn btn-primary" data-dismiss="modal">Modifica</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
 
 	<hr>
 	<jsp:include page="../block/footer.jsp"></jsp:include>

@@ -87,13 +87,12 @@ public class UtenteDAO {
 		return result;
 	}
 
+	//Remove a user from database
 	public boolean rimuoviUtente(String email) {
 		
 		Session session = HibernateUtil.openSession();
-
 		Transaction tx = null;
 		boolean result = false;
-		//String hql = "delete Utente Where username = :username";
 
 		try {
 
@@ -101,16 +100,7 @@ public class UtenteDAO {
 			tx.begin();
 			Utente u = (Utente)leggiUtente(email);
 			session.delete(u);
-			
-			//Query query = session.createQuery(hql);
-			//query.setParameter("username", email);
-			//int n = query.executeUpdate();
 			tx.commit();
-//			if (n > 0){
-//				System.out.println(n);
-//				result = true;
-//			}
-			
 			result = true;
 
 		} catch (Exception e) {
@@ -118,7 +108,6 @@ public class UtenteDAO {
 		} finally {
 			session.close();
 		}
-
 		return result;
 	}
 }
