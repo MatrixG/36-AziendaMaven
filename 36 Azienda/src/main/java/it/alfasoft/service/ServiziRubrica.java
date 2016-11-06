@@ -38,5 +38,4 @@ public class ServiziRubrica {
 		// boolean result = vDao.eliminaVoce(v);
 		return false;
 	}
-
 }

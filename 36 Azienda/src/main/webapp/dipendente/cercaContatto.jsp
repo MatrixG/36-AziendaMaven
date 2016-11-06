@@ -34,7 +34,7 @@
 			<div class="row">
 			
 				<div id="content">
-				<label hidden="true" id = "ruolo"> ${utente.getId()}</label>
+				<label hidden="true" id = "ruolo">${utente.getId()}</label>
 					<div class="box col-md-6">
 						<div class="box-inner">
 							<div class="box-header well">
@@ -60,7 +60,7 @@
 						</div>
 					</div>
 
-					<div class="box col-md-9" hidden="false">
+					<div class="box col-md-9" >
 						<div class="box-inner">
 							<div class="box-header well" data-original-title="">
 								<h2>
@@ -69,7 +69,7 @@
 							</div>
 						</div>
 						<div class="box-content"></div>
-						<table class="table table-striped table-bordered responsive">
+						<table class="table table-striped table-bordered responsive" id = "myTable">
 							<thead>
 								<tr>
 									<th>Nome</th>

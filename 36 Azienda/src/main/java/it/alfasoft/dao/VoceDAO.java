@@ -105,6 +105,7 @@ public class VoceDAO {
 		return result;
 	}
 
+	//Ritorna una lista di tutti i contatti di un certo ID
 	@SuppressWarnings("unchecked")
 	public List<Voce> getVoci(int id) {
 
