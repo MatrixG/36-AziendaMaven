@@ -5,12 +5,6 @@
 <%@ page import="it.alfasoft.bean.Cliente"%>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"
-	type="text/javascript"></script>
-<script
-	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"
-	type="text/javascript"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/admin/js/tabellaDipendenti.js"></script>
 
@@ -21,12 +15,6 @@
 <jsp:include page="../block/header.jsp"></jsp:include>
 
 <body>
-
-
-<div id="my_dialog" title="Basic dialog">
-  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
-</div>
-
 
 	<jsp:include page="../block/topBar.jsp"></jsp:include>
 
@@ -43,8 +31,7 @@
 				</ul>
 			</div>
 
-			<div class="row" id="prova">
-
+			<div class="row">
 				<div class="box col-md-9">
 					<div class="box-inner">
 						<div class="box-header well" data-original-title="">
@@ -90,6 +77,26 @@
 			</div>
 			<!--/#content.col-md-0-->
 
+		</div>
+	</div>
+
+	<div class="modal fade" id="modalDel" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h3>Cancella Dipendente</h3>
+				</div>
+				<div class="modal-body">
+					<p>Sei sicuro di voler continuare?</p>
+				</div>
+				<div class="modal-footer">
+					<a href="#" class="btn btn-default" data-dismiss="modal">Annulla</a>
+					<a href="#" class="btn btn-primary" data-dismiss="modal">Cancella</a>
+				</div>
+			</div>
 		</div>
 	</div>
 

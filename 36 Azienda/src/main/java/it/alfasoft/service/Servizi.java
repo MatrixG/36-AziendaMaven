@@ -81,4 +81,9 @@ public class Servizi {
 
 		return PSWEncoding.codificatePass(psw);
 	}
+
+	public boolean cancellaUtente(String email) {
+		// TODO Auto-generated method stub
+		return uDAO.rimuoviUtente(email);
+	}
 }

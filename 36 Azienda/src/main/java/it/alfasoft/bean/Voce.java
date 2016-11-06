@@ -1,7 +1,5 @@
 package it.alfasoft.bean;
 
-import javax.persistence.Entity;
-
 import it.alfasoft.utils.CheckValues;
 
 import javax.persistence.*;
