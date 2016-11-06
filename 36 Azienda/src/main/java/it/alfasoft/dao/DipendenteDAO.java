@@ -84,4 +84,9 @@ public class DipendenteDAO {
 		}
 		return result;
 	}
+
+	public boolean aggiornaDipendente(Dipendente o) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

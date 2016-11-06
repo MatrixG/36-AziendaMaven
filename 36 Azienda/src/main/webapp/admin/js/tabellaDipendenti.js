@@ -46,8 +46,37 @@ $(document).ready(function() {
 
 		
 		$('#modalModify').modal('show').on("click", ".btn-primary", function() {
-			
-			
+		
+			$.ajax({
+
+				type : "POST",
+				url : "../modificaDipendente",
+				
+				data : {nome: $('#inputNome').val(),
+						cognome: $('#inputCognome').val(),
+						email: $('#inputEmail').val(),
+						posizione: $('#inputPosizione').val(),
+						stipendio: $('#inputStipendio').val()},
+						
+				dataType : "JSON",
+
+				success : function(data, txtStatus, jqXHR) {
+
+					if (data.success) {
+
+						alert(data.success);
+
+					} else {
+
+						alert("Error on removing!");
+					}
+				},
+				error : function(jqXHR, txtStatus, erroreLanciato) {
+
+					console.log("ajax error: " + txtStatus);
+
+				}
+			})
 			
 		});
 	});

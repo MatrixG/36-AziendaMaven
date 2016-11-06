@@ -89,4 +89,9 @@ public class ClienteDAO {
 		}
 		return result;
 	}
+
+	public boolean aggiornaCliente(Cliente o) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

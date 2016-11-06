@@ -83,7 +83,18 @@ public class Servizi {
 	}
 
 	public boolean cancellaUtente(String email) {
-		// TODO Auto-generated method stub
+		
 		return uDAO.rimuoviUtente(email);
+	}
+
+	public boolean modificaUtente(Object o, int ruolo) {
+		switch (ruolo) {
+
+		case 1:
+			return dDAO.aggiornaDipendente((Dipendente)o);
+		case 2:
+			return cDAO.aggiornaCliente((Cliente)o);
+		}
+		return false;
 	}
 }

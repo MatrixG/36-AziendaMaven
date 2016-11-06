@@ -12,7 +12,7 @@ import it.alfasoft.service.Servizi;
 //This Servlet Deletes a User from the database
 
 @WebServlet(urlPatterns = { "/admin/cancellaDipendente" })
-public class DipendenteServlet extends HttpServlet {
+public class CancellaDipendenteServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
