@@ -38,7 +38,7 @@
 								</h2>
 							</div>
 							<div class="box-content">
-								<form role="form" action="do/doRegistrazioneCliente.jsp"
+								<form role="form" action="${pageContext.request.contextPath}/admin/do/doRegistrazioneCliente.jsp"
 									method="post">
 									<div class="form-group">
 										<label for="inputNome">Nome:</label> <input type="text"

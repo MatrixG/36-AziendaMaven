@@ -18,6 +18,9 @@
 				<li><a class="ajax-link"
 					href="${pageContext.request.contextPath}/dipendente/do/doElencoContatti.jsp"><i
 						class="glyphicon glyphicon-list"></i><span> Lista Contatti</span></a></li>
+				<li><a class="ajax-link"
+					href="${pageContext.request.contextPath}/dipendente/cercaContatto.jsp"><i
+						class="glyphicon glyphicon-search"></i><span> Cerca Contatto</span></a></li>
 			</ul>
 		</div>
 	</div>

@@ -28,12 +28,7 @@ public class ModificaDipendenteServlet extends HttpServlet {
 		d.setStipendio(Integer.parseInt(request.getParameter("stipendio")));
 		d.setPosizione(request.getParameter("posizione"));
 		d.setUsername(request.getParameter("email"));
-		
-		System.out.println(d.getCognome() + " " + 
-						   d.getNome() + " " +
-							d.getStipendio() + " " +
-						   d.getPosizione() + " " +
-							d.getUsername());
+				
 		PrintWriter out = response.getWriter();
 		JsonObject jobj = new JsonObject();
 		String userVecchia = request.getParameter("emailUser");
