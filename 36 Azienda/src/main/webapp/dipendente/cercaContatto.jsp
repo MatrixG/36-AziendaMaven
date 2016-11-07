@@ -7,15 +7,15 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/dipendente/js/cercaContatti.js"></script>
-	
+
 <c:choose>
-	<c:when test="${utente.getRuolo() == 1 && utente.isValid()}">	
+	<c:when test="${utente.getRuolo() == 1 && utente.isValid()}">
 
 		<html>
 <jsp:include page="../block/header.jsp"></jsp:include>
 
 <body>
-	
+
 	<jsp:include page="../block/topBar.jsp"></jsp:include>
 
 	<div class="row">
@@ -32,9 +32,9 @@
 			</div>
 
 			<div class="row">
-			
+
 				<div id="content">
-				<label hidden="true" id = "ruolo">${utente.getId()}</label>
+					<label hidden="true" id="ruolo">${utente.getId()}</label>
 					<div class="box col-md-6">
 						<div class="box-inner">
 							<div class="box-header well">
@@ -44,27 +44,32 @@
 								</h2>
 							</div>
 							<div class="box-content">
-								
-									<div class="form-group">
-										<label for="inputCerca"></label> <input type="text"
-											class="form-control" id="inputCerca"
-											placeholder="Inserisci un Nome, un Cognome oppure un Telefono"
-											name="ricerca">
-									</div>
-									<div align="right">
-										<button type="submit" class="btn btn-default" id = "cerca_btn">Cerca</button>
-									</div>
-								
+
+								<div class="form-group">
+									<label for="inputCerca"></label> <input type="text"
+										class="form-control" id="inputCerca"
+										placeholder="Inserisci un Nome, un Cognome oppure un Telefono"
+										name="ricerca">
+								</div>
+								<div align="right">
+									<button type="submit" class="btn btn-default" id="cerca_btn">Cerca</button>
+								</div>
+
 							</div>
 
 						</div>
 					</div>
+				</div>
+			</div>
 
-					<div class="box col-md-9"  id="prova" hidden="true" >
+			<div class="row">
+
+				<div id="content">
+					<div class="box col-md-6" id="prova" hidden="true">
 						<div class="box-inner">
 							<div class="box-header well" data-original-title="">
 								<h2>
-									<i class="glyphicon glyphicon-user"></i> Elenco dei Contatti
+									<i class="glyphicon glyphicon-user"></i> Contatti Trovati
 								</h2>
 							</div>
 						</div>
@@ -77,7 +82,7 @@
 									<th>Telefono</th>
 								</tr>
 							</thead>
-							<tbody id = "myTable">
+							<tbody id="myTable">
 
 
 
