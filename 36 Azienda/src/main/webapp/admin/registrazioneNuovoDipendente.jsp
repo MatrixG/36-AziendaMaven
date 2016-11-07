@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<%-- <%@ page import="it.alfasoft.bean.Utente"%> --%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/admin/js/checkInsertEmploy.js"></script>
 
 <c:choose>
 	<c:when test="${utente.getRuolo() == 0 && utente.isValid()}">
@@ -11,6 +14,7 @@
 <jsp:include page="../block/header.jsp"></jsp:include>
 
 <body>
+
 	<jsp:include page="../block/topBar.jsp"></jsp:include>
 
 	<div class="row">
@@ -28,7 +32,7 @@
 
 			<div class="row">
 
-				<div id="content">
+				<div id="content" class="col-md-12 col-md-offset-2">
 					<div class="box col-md-6">
 						<div class="box-inner">
 							<div class="box-header well">
@@ -38,35 +42,38 @@
 								</h2>
 							</div>
 							<div class="box-content">
-								<form role="form" action="${pageContext.request.contextPath}/admin/do/doRegistrazioneDipendente.jsp"
+								<form role="form"
+									action="${pageContext.request.contextPath}/admin/do/doRegistrazioneDipendente.jsp"
 									method="post">
+
 									<div class="form-group">
-										<label for="inputNome">Nome:</label> <input type="text"
-											class="form-control" id="inputNome" placeholder="Nome"
-											name="nome">
+										<label for="inputNome">Nome: </label><span id = "spanNome"
+											class="label label-warning">prova</span><input
+											type="text" class="form-control" id="inputNome"
+											placeholder="Nome" name="nome" title="Prova messaggio">
 									</div>
 									<div class="form-group">
-										<label for="inputCognome">Cognome:</label> <input type="text"
+										<label for="inputCognome">Cognome:</label><input type="text"
 											class="form-control" id="inputCognome" placeholder="Cognome"
 											name="cognome">
 									</div>
 									<div class="form-group">
-										<label for="inputStipendio">Stipendio:</label> <input
+										<label for="inputStipendio">Stipendio:</label><input
 											type="text" class="form-control" id="inputStipendio"
 											placeholder="Stipendio" name="stipendio">
 									</div>
 									<div class="form-group">
-										<label for="inputPosizione">Posizione:</label> <input
+										<label for="inputPosizione">Posizione:</label><input
 											type="text" class="form-control" id="inputPosizione"
 											placeholder="Posizione" name="posizione">
 									</div>
 									<div class="form-group">
-										<label for="inputEmail">Email address:</label> <input
+										<label for="inputEmail">Email address:</label><input
 											type="email" class="form-control" id="inputEmail"
 											placeholder="Enter email" name="username">
 									</div>
 									<div class="form-group">
-										<label for="inputPassword">Password:</label> <input
+										<label for="inputPassword">Password:</label><input
 											type="password" class="form-control" id="inputPassword"
 											placeholder="Password" name="password">
 									</div>

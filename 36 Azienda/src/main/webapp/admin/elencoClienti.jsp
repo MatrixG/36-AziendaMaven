@@ -6,15 +6,6 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-<!-- <script type="text/javascript"> -->
-
-// $(document).ready(function() {
-//     $('#tableClienti').DataTable();
-// } );
-
-<!-- </script> -->
-
-
 <c:choose>
 	<c:when test="${utente.getRuolo() == 0 && utente.isValid()}">
 
@@ -39,7 +30,7 @@
 
 			<div class="row" id="prova">
 
-				<div class="box col-md-9">
+				<div class="box col-md-10">
 					<div class="box-inner">
 						<div class="box-header well" data-original-title="">
 							<h2>

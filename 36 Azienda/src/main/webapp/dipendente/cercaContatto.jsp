@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<%-- <%@ page import="it.alfasoft.bean.Utente"%> --%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -32,8 +31,8 @@
 			</div>
 
 			<div class="row">
-
-				<div id="content">
+				
+				<div id="content" class="col-md-12 col-md-offset-2">
 					<label hidden="true" id="ruolo">${utente.getId()}</label>
 					<div class="box col-md-6">
 						<div class="box-inner">
@@ -60,11 +59,12 @@
 						</div>
 					</div>
 				</div>
+
 			</div>
 
 			<div class="row">
 
-				<div id="content">
+				<div class="col-md-12 col-md-offset-2">
 					<div class="box col-md-6" id="prova" hidden="true">
 						<div class="box-inner">
 							<div class="box-header well" data-original-title="">

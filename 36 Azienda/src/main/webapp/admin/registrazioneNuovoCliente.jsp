@@ -28,7 +28,7 @@
 
 			<div class="row">
 
-				<div id="content">
+				<div id="content" class="col-md-12 col-md-offset-2">
 					<div class="box col-md-6">
 						<div class="box-inner">
 							<div class="box-header well">
