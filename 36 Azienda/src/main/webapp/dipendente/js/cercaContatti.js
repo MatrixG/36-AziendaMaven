@@ -34,7 +34,7 @@ $(document).ready(function() {
 	   
 	    	if ($(this).val().length > 0){
 	    	
-	    		$('#prova').show();
+	    		$('#prova').fadeIn("slow");
 	    		$.ajax({
 
 					type : "POST",
@@ -62,7 +62,7 @@ $(document).ready(function() {
 				})
 	    } else {
 	    	
-	    	$('#prova').hide();
+	    	$('#prova').fadeOut("slow");
 	    	
 	    	}
 	  }
