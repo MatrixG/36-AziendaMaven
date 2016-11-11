@@ -21,10 +21,11 @@
 					</div>
 					<div class="box-content">
 						<div class="box-content">
-							La sessione è scaduta!<br /> A breve verrai reindirizzato...<br/><br/>
+							La sessione è scaduta!<br /> A breve verrai
+							reindirizzato...<br /> <br />
 
 							<div class="progress progress-striped progress-success active">
-								<div class="progress-bar"  style="width: 50%;"></div>
+								<div id="bar" class="progress-bar" style="width: 0%;"></div>
 							</div>
 						</div>
 					</div>
@@ -37,13 +38,22 @@
 
 
 <script type="text/javascript">
-$(document).ready(function() {
-	
-	
-	
-});
 
+	var counter = 0;
+	var id;
 
+	
+
+	id = setInterval(function() {
+		counter++;
+		if (counter > 5) {
+			clearInterval(id);
+			window.location.href = 'login.jsp';
+		} else {
+			$('#bar').width((counter*2).toString() + "0%");
+			
+		}
+	}, 1000);
 </script>
 
 </html>
