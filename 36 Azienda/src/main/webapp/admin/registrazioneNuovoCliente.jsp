@@ -7,8 +7,8 @@
 <c:choose>
 	<c:when test="${utente.getRuolo() == 0 && utente.isValid()}">
 
-		<html>
-<jsp:include page="../block/header.jsp"></jsp:include>
+<html>
+<head><jsp:include page="../block/header.jsp"></jsp:include></head>
 
 <body>
 	<jsp:include page="../block/topBar.jsp"></jsp:include>

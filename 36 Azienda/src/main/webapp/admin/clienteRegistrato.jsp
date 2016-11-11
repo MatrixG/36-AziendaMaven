@@ -2,14 +2,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <c:choose>
 	<c:when test="${utente.getRuolo() == 0 && utente.isValid()}">
 
-		<html>
-<jsp:include page="../block/header.jsp"></jsp:include>
+<html>
+<head>
+<jsp:include page="../block/header.jsp"></jsp:include>		
+</head>
 
 <body>
 	<jsp:include page="../block/topBar.jsp"></jsp:include>

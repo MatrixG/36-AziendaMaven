@@ -90,8 +90,37 @@ public class ClienteDAO {
 		return result;
 	}
 
-	public boolean aggiornaCliente(Cliente d, String email) {
-		// TODO Auto-generated method stub
-		return false;
+	//Aggiorna un Cliente. Effettuo prima una ricerca per cliente
+	public boolean aggiornaCliente(Cliente cIn, String email) {
+		
+		Session session = HibernateUtil.openSession();
+
+		Transaction tx = null;
+		boolean result = false;
+		
+		try {
+
+			tx = session.getTransaction();
+			tx.begin();
+			Cliente c = leggiCliente(email);
+			if (c != null){
+				c.setCognome(cIn.getCognome());
+				c.setNome(cIn.getNome());
+				c.setpIva(cIn.getpIva());
+				c.setRagSociale(cIn.getRagSociale());
+				c.setUsername(cIn.getUsername());
+			}
+
+			session.update(c);
+			tx.commit();
+			session.flush();
+			result = true;
+
+		} catch (Exception e) {
+			tx.rollback();
+		} finally {
+			session.close();
+		}
+		return result;
 	}
 }

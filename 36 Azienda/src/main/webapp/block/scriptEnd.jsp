@@ -3,30 +3,7 @@
 
 <!-- external javascript -->
 
-<script>
-// $(document).ready(function(){
-//     $("#menuAggiungi").mouseover(function(){
-//     	$(this).trigger("click");
-//         }
-    
-    
-    /*  ,function(){ */
-        /* $(this).hide(); */
-  //  });
-    
-    
-  /*   $(document).ready(function(){
-        $( ".accordion-toggle" ).mouseover(function(){
-           $( ".accordion-toggle" ).trigger( "click" );
-        });
-    });
-    
-    alert("entrato"); */
-//});
-</script>
-
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!-- library for cookie management -->

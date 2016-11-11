@@ -2,16 +2,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/admin/js/checkInsertEmploy.js"></script>
+
+
 
 <c:choose>
 	<c:when test="${utente.getRuolo() == 0 && utente.isValid()}">
 
-		<html>
+<html>
+<head>
 <jsp:include page="../block/header.jsp"></jsp:include>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/admin/js/checkInsertEmploy.js"></script>
+</head>
+
 
 <body>
 

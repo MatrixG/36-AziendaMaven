@@ -14,7 +14,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="index.html">
-                <span>Charisma</span></a>
+                <span>Alfasoft</span></a>
 
             <!-- user dropdown starts -->
             <div class="btn-group pull-right">
