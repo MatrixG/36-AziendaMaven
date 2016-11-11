@@ -24,6 +24,12 @@ public class Servizi {
 	DipendenteDAO dDAO = new DipendenteDAO();
 	UtenteDAO uDAO = new UtenteDAO();
 	
+	public boolean initialize(Utente u){
+		
+		uDAO.initAdmin(u);
+		return uDAO.setAdmin(u);
+	}
+	
 	// Metodo utile per riempire i campi di un Utente
 	public Object riempiUtente(String username, int ruolo){
 		

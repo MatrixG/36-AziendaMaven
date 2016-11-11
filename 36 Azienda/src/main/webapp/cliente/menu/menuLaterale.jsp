@@ -12,6 +12,15 @@
 				<li><a class="ajax-link"
 					href="${pageContext.request.contextPath}/cliente/homePageCliente.jsp"><i
 						class="glyphicon glyphicon-home"></i><span> Home</span></a></li>
+				<li><a class="ajax-link"
+					href="${pageContext.request.contextPath}/cliente/nuovaVoceRubrica.jsp"><i
+						class="glyphicon glyphicon-plus"></i><span> Nuovo Contatto</span></a></li>
+				<li><a class="ajax-link"
+					href="${pageContext.request.contextPath}/cliente/do/doElencoContatti.jsp"><i
+						class="glyphicon glyphicon-list"></i><span> Lista Contatti</span></a></li>
+				<li><a class="ajax-link"
+					href="${pageContext.request.contextPath}/cliente/cercaContatto.jsp"><i
+						class="glyphicon glyphicon-search"></i><span> Cerca Contatto</span></a></li>
 			</ul>
 		</div>
 	</div>

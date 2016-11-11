@@ -20,7 +20,7 @@ import it.alfasoft.bean.VoceJSON;
 
 //This Servlet Search a Contact from the database
 
-@WebServlet(urlPatterns = { "/dipendente/cercaVoce" })
+@WebServlet(urlPatterns = {"/dipendente/cercaVoce", "/cliente/cercaVoce"})
 public class CercaVoceServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;

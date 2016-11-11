@@ -5,10 +5,10 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript"
-	src="${pageContext.request.contextPath}/dipendente/js/cercaContatti.js"></script>
+	src="${pageContext.request.contextPath}/cliente/js/cercaContatti.js"></script>
 
 <c:choose>
-	<c:when test="${utente.getRuolo() == 1 && utente.isValid()}">
+	<c:when test="${utente.getRuolo() == 2 && utente.isValid()}">
 
 		<html>
 <jsp:include page="../block/header.jsp"></jsp:include>

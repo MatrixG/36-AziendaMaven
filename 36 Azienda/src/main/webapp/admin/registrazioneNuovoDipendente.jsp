@@ -47,8 +47,7 @@
 									method="post">
 
 									<div class="form-group">
-										<label for="inputNome">Nome: </label><span id = "spanNome"
-											class="label label-warning">prova</span><input
+										<label for="inputNome">Nome: </label><input
 											type="text" class="form-control" id="inputNome"
 											placeholder="Nome" name="nome" title="Prova messaggio">
 									</div>

@@ -16,7 +16,7 @@ import it.alfasoft.service.ServiziRubrica;
 
 //Init the DB for AJAX query
 
-@WebServlet(urlPatterns = { "/dipendente/initCercaVoce" })
+@WebServlet(urlPatterns = {"/dipendente/initCercaVoce", "/cliente/initCercaVoce"})
 public class InitCercaVoceServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
