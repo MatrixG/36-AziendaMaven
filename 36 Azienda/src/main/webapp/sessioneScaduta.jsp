@@ -35,7 +35,13 @@
 	<jsp:include page="block/scriptEnd.jsp"></jsp:include>
 </body>
 
+
 <script type="text/javascript">
+$(document).ready(function() {
+	
+	
+	
+});
 
 
 </script>
