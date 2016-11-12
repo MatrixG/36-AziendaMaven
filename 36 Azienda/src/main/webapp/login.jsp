@@ -19,7 +19,7 @@ body {
 
 	<div class="ch-container">
 
-		<a class="navbar-brand"><span>Alfasoft S.r.l. 2016©</span></a>
+		<a class="navbar-brand"><span>Alfasoft 2016©</span></a>
 
 		<div class="row">
 			<div class="col-md-12 center login-header"></div>
