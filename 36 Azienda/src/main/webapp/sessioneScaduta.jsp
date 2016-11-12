@@ -9,6 +9,7 @@
 </head>
 
 <body>
+	<%session.invalidate();%>
 	<div class="ch-container center">
 		<div class="row">
 		<br/><br/><br/><br/>
@@ -23,8 +24,8 @@
 					</div>
 					<div class="box-content">
 						<div class="box-content">
-							La sessione è scaduta!<br /> A breve verrai
-							reindirizzato...<br /> <br />
+							La sessione è scaduta!<br /> A breve sarà
+							reindirizzato alla pagina di login<br /> <br />
 
 							<div class="progress progress-striped progress-success active">
 								<div id="bar" class="progress-bar" style="width: 0%;"></div>
