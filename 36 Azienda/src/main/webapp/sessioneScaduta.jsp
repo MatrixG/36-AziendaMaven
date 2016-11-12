@@ -11,6 +11,8 @@
 <body>
 	<div class="ch-container center">
 		<div class="row">
+		<br/><br/><br/><br/>
+		<img height = "100px" src="${pageContext.request.contextPath}/images/exclamation.png">
 			<div class="box col-md-4 center login-header">
 				<div class="box-inner">
 					<div class="box-header well" data-original-title="">
