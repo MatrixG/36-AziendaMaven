@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html>
@@ -64,6 +65,9 @@ body {
 				<div hidden="true" class="alert alert-danger">
 					<strong>Attention!</strong> The request was not submitted!
 				</div>
+				<div hidden="true" class="alert alert-warning">
+					<strong>Attention!</strong> Incorrect Username or Password!
+				</div>
 			</div>
 			<!--/span-->
 		</div>
@@ -120,6 +124,27 @@ body {
 			</div>
 		</div>
 	</div>
+
+	<c:if test="${error != null}">
+		<c:choose>
+			<c:when test="${error == 1 }">
+				<script type="text/javascript">
+				var counter = 0;
+				var id;
+				$(".alert-warning").fadeIn("slow");
+
+				id = setInterval(function() {
+					counter++;
+					if (counter > 6) {
+						clearInterval(id);
+						$(".alert-warning")
+						.fadeOut("slow");
+					}
+				}, 1000);
+				</script>
+			</c:when>
+		</c:choose>
+	</c:if>
 
 </body>
 
