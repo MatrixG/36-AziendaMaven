@@ -21,6 +21,9 @@
 				<li><a class="ajax-link"
 					href="${pageContext.request.contextPath}/dipendente/cercaContatto.jsp"><i
 						class="glyphicon glyphicon-search"></i><span> Cerca Contatto</span></a></li>
+				<li><a class="ajax-link"
+					href="${pageContext.request.contextPath}/dipendente/fileSystem.jsp"><i
+						class="glyphicon glyphicon-folder-open"></i><span> Archiviazione</span></a></li>
 			</ul>
 		</div>
 	</div>

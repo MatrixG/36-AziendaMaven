@@ -10,7 +10,7 @@ public class ServiziRubrica {
 
 	// Registra una voce
 	public boolean aggiungiVoce(Voce v) {
-		
+
 		return vDao.aggiungiVoce(v);
 	}
 

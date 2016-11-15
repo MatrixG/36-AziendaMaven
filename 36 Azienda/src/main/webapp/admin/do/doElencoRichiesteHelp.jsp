@@ -6,8 +6,8 @@
     
     Servizi service = new Servizi();
       
-    request.setAttribute("clienti", service.getTuttiClienti());
+    request.setAttribute("utentiHelp", service.getTuttiHelp());
     
     %>
     
-    <jsp:forward page="../elencoClienti.jsp"></jsp:forward>
+    <jsp:forward page="../elencoRichiesteHelp.jsp"></jsp:forward>

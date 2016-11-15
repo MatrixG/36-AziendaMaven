@@ -113,4 +113,9 @@ public class Servizi {
 		
 		return hDAO.aggiungiHelp(u);
 	}
+	
+	public List<UtenteHelp> getTuttiHelp(){
+		
+		return hDAO.getTuttiHelp();
+	}
 }

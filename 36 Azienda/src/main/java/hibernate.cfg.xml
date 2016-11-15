@@ -39,5 +39,6 @@
 		<mapping class="it.alfasoft.bean.Dipendente" />
 		<mapping class="it.alfasoft.bean.Voce" />
 		<mapping class="it.alfasoft.bean.UtenteHelp" />
+		<mapping class="it.alfasoft.bean.Cartella" />
 	</session-factory>
 </hibernate-configuration>

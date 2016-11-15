@@ -29,7 +29,7 @@
 							href="${pageContext.request.contextPath}/admin/do/doElencoDipendenti.jsp">Dipendenti</a></li>
 					</ul></li>
 				<li><a class="ajax-link"
-					href="${pageContext.request.contextPath}/admin/elencoRichiesteHelp.jsp"><i
+					href="${pageContext.request.contextPath}/admin/do/doElencoRichiesteHelp.jsp"><i
 						class="glyphicon glyphicon-warning-sign"></i><span> Segnalazioni Aiuto</span></a></li>
 			</ul>
 		</div>

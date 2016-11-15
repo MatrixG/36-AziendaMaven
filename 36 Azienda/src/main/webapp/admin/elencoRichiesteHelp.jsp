@@ -44,25 +44,29 @@
 					<table id = "tableClienti" class="table table-striped table-bordered bootstrap-datatable datatable responsive">
 						<thead>
 							<tr>
+								<th><div align="center">Provenienza</div></th>
+								<th><div align="center">Data</div></th>
 								<th><div align="center">Nome</div></th>
 								<th><div align="center">Cognome</div></th>
 								<th><div align="center">Email</div></th>
-								<th><div align="center">Partita IVA</div></th>
-								<th><div align="center">Ragione Sociale</div></th>
-								<th><div align="center">Modifica</div></th>
+								<th><div align="center">Problema</div></th>
+								<th><div align="center">Messaggio</div></th>
+								<th><div align="center">Azioni</div></th>
 							</tr>
 						</thead>
 						<tbody>
 
-							<c:forEach var="c" items="${clienti}">
+							<c:forEach var="u" items="${utentiHelp}">
 								<tr>
-									<td><div align="center">${c.nome}</div></td>
-									<td><div align="center">${c.cognome}</div></td>
-									<td><div align="center">${c.username}</div></td>
-									<td><div align="center">${c.pIva}</div></td>
-									<td><div align="center">${c.ragSociale}</div></td>
+									<td><div align="center">${u.provenienzaHelp}</div></td>
+									<td><div align="center">${u.dataInserimento}</div></td>
+									<td><div align="center">${u.nome}</div></td>
+									<td><div align="center">${u.cognome}</div></td>
+									<td><div align="center">${u.email}</div></td>
+									<td><div align="center">${u.problema}</div></td>
+									<td><div align="center">${u.messaggio}</div></td>
 									<td class="center"><div align="center"><a class="btn btn-info" href="#"> <i
-											class="glyphicon glyphicon-edit icon-white"></i> Edit
+											class="glyphicon glyphicon-edit icon-white"></i> Dettagli
 									</a> <a class="btn btn-danger" href="#"> <i
 											class="glyphicon glyphicon-trash icon-white"></i> Delete
 									</a></div></td>
@@ -85,7 +89,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">×</button>
-					<h3>Cancella Dipendente</h3>
+					<h3>Cancella Richiesta</h3>
 				</div>
 				<div class="modal-body">
 					<p>Sei sicuro di voler continuare?</p>
@@ -105,7 +109,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">×</button>
-					<h3>Modifica Cliente</h3>
+					<h3>Dettagli</h3>
 				</div>
 				<div class="modal-body">
 					<div class="form-group">
@@ -156,6 +160,6 @@
 
 	</c:when>
 	<c:otherwise>
-		<c:redirect url="../sessioneScaduta.jsp"></c:redirect>
+		<c:redirect url="../../sessioneScaduta.jsp"></c:redirect>
 	</c:otherwise>
 </c:choose>
