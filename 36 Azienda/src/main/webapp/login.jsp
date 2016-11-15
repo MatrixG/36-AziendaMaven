@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +14,7 @@
 body {
 	background-image: url(images/background-blue3.jpg);
 }
+
 </style>
 
 </head>
@@ -83,43 +85,56 @@ body {
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">×</button>
+					<button id="buttonX" type="button" class="close"
+						data-dismiss="modal">×</button>
 					<h3>Contact Us</h3>
 				</div>
 				<div class="modal-body">
 					<div class="form-group">
 						<label for="inputNome">Name:</label> <input type="text"
-							class="form-control" id="inputNome" placeholder="Nome"
-							name="nome">
+							class="form-control" id="inputNome" data-container="body"
+							data-toggle="popover" data-content="" data-placement="top"
+							data-trigger="manual" maxlength="40" placeholder="Name">
+						<span hidden="false" class="glyphicon form-control-feedback"></span>
 					</div>
 					<div class="form-group">
 						<label for="inputCognome">Surname:</label> <input type="text"
-							class="form-control" id="inputCognome" placeholder="Cognome"
-							name="cognome">
+							class="form-control" id="inputCognome" data-container="body"
+							data-toggle="popover" data-content="" data-placement="top"
+							data-trigger="manual" maxlength="40" placeholder="Surname">
+						<span hidden="true" class="glyphicon form-control-feedback"></span>
 					</div>
-					<div class="form-group">
+					<div class="form-group" id="emailForm">
 						<label for="inputEmail">Email address:</label> <input type="email"
-							class="form-control" id="inputEmail" placeholder="Enter email"
-							name="username">
+							class="form-control" id="inputEmail" data-container="body"
+							data-toggle="popover" data-content="" data-placement="top"
+							data-trigger="manual" maxlength="40" placeholder="Enter email">
+						<span hidden="true" class="glyphicon form-control-feedback"></span>
 					</div>
 					<div class="form-group">
 						<label for="selectMenu">Problem Type:</label> <select
-							id="selectMenu" class="form-control">
-							<option>Select one of these</option>
-							<option>Lost my Username</option>
-							<option>Lost my Password</option>
-							<option>Lost my Username and Password</option>
-							<option>Other</option>
+							id="selectMenu" data-container="body" data-toggle="popover"
+							data-content="" data-placement="top" data-trigger="manual"
+							class="form-control">
+							<option value="0">Select one of these</option>
+							<option value="1">Lost my Username</option>
+							<option value="2">Lost my Password</option>
+							<option value="3">Lost my Username and Password</option>
+							<option value="4">Other</option>
 						</select>
 					</div>
 					<div id="commentForm" hidden="true" class="form-group">
-						<label for="additionalInfo">Additional informations:</label>
-						<textarea class="form-control" rows="5" id="additionalInfo"></textarea>
+						<label for="textArea">Additional informations:</label>
+						<textarea id="textArea" data-container="body"
+							data-toggle="popover" data-content="" data-placement="top"
+							data-trigger="manual" class="form-control" rows="5"
+							maxlength="300"></textarea>
+						<p id="labelInfo" align="right">400 char left</p>
 					</div>
 				</div>
 				<div class="modal-footer">
-					<a class="btn btn-default" data-dismiss="modal">Cancel</a> <a
-						id="buttonSend" class="btn btn-primary" data-dismiss="modal">Send</a>
+					<a id="buttonCancel" class="btn btn-default" data-dismiss="modal">Cancel</a>
+					<a id="buttonSend" class="btn btn-primary" data-dismiss="modal">Send</a>
 				</div>
 			</div>
 		</div>
@@ -129,18 +144,17 @@ body {
 		<c:choose>
 			<c:when test="${error == 1 }">
 				<script type="text/javascript">
-				var counter = 0;
-				var id;
-				$(".alert-warning").fadeIn("slow");
+					var counter = 0;
+					var id;
+					$(".alert-warning").fadeIn("slow");
 
-				id = setInterval(function() {
-					counter++;
-					if (counter > 6) {
-						clearInterval(id);
-						$(".alert-warning")
-						.fadeOut("slow");
-					}
-				}, 1000);
+					id = setInterval(function() {
+						counter++;
+						if (counter > 6) {
+							clearInterval(id);
+							$(".alert-warning").fadeOut("slow");
+						}
+					}, 1000);
 				</script>
 			</c:when>
 		</c:choose>
@@ -149,7 +163,7 @@ body {
 </body>
 
 <jsp:include page="block/scriptEnd.jsp"></jsp:include>
-<script src="jsMine/login.js">
+<script src="jsMine/login2.js">
 	
 </script>
 </html>

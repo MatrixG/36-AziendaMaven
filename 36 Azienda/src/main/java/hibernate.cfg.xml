@@ -13,20 +13,20 @@
 
 		<!-- Database connection settings -->
 
-<!-- 		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property> -->
-		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-<!-- 		<property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property> -->
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/azienda</property>
-<!-- 		<property name="connection.username">aziendaSite</property> -->
-<!-- 		<property name="connection.password">aziendaSite</property> -->
-		<property name="connection.username">root</property>
-		<property name="connection.password">Alex78912110</property>
+		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+<!-- 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property> -->
+		<property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+<!-- 		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/azienda</property> -->
+		<property name="connection.username">aziendaSite</property>
+		<property name="connection.password">aziendaSite</property>
+<!-- 		<property name="connection.username">root</property> -->
+<!-- 		<property name="connection.password">Alex78912110</property> -->
 		<!-- JDBC connection pool (use the built-in) -->
 		<property name="connection.pool_size">1</property>
 		<!-- SQL dialect -->
 
-<!-- 		<property name="dialect">org.hibernate.dialect.Oracle10gDialect</property> -->
-		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+<!-- 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property> -->
 		<!-- Disable the second-level cache -->
 		<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
 		<!-- Echo all executed SQL to stdout -->
@@ -38,5 +38,6 @@
 		<mapping class="it.alfasoft.bean.Cliente" />
 		<mapping class="it.alfasoft.bean.Dipendente" />
 		<mapping class="it.alfasoft.bean.Voce" />
+		<mapping class="it.alfasoft.bean.UtenteHelp" />
 	</session-factory>
 </hibernate-configuration>

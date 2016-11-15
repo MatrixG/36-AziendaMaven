@@ -2,13 +2,16 @@ package it.alfasoft.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-
 import com.google.gson.JsonObject;
+import it.alfasoft.bean.UtenteHelp;
+import it.alfasoft.service.Servizi;
 
 //Init the DB for AJAX query
 
@@ -19,24 +22,30 @@ public class RichiestaAiutoServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-//		ServiziRubrica service = new ServiziRubrica();
-//		int id = Integer.parseInt(request.getParameter("set"));
+		Servizi service = new Servizi();
 		PrintWriter out = response.getWriter();
 		JsonObject jobj = new JsonObject();
-//		List<Voce> contatti = service.getVoci(id);
 		
-		jobj.addProperty("success", false);
-//		if (contatti != null) {
-//			
-//			HttpSession session = request.getSession();
-//			session.setAttribute("listaVoci", contatti);
-//			
-//			jobj.addProperty("success", true);
-//			
-//		} else {
-//
-//			jobj.addProperty("success", false);
-//		}
+		UtenteHelp u = new UtenteHelp();
+		u.setNome(request.getParameter("nome"));
+		u.setCognome(request.getParameter("cognome"));
+		u.setEmail(request.getParameter("email"));
+		u.setProblema(request.getParameter("problema"));
+		u.setMessaggio(request.getParameter("messaggio"));
+		u.setProvenienzaHelp(request.getParameter("from"));
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/M/yyyy");
+		String date = sdf.format(new Date());
+		u.setDataInserimento(date);
+		
+		if (service.addHelp(u)) {
+			
+			jobj.addProperty("success", true);
+			
+		} else {
+
+			jobj.addProperty("success", false);
+		}
 		out.println(jobj.toString());
 		out.close();
 	}

@@ -4,7 +4,9 @@ import java.util.List;
 import it.alfasoft.bean.Cliente;
 import it.alfasoft.bean.Dipendente;
 import it.alfasoft.bean.Utente;
+import it.alfasoft.bean.UtenteHelp;
 import it.alfasoft.dao.UtenteDAO;
+import it.alfasoft.dao.UtenteHelpDAO;
 import it.alfasoft.dao.ClienteDAO;
 import it.alfasoft.dao.DipendenteDAO;
 import it.alfasoft.utils.PSWEncoding;
@@ -23,6 +25,7 @@ public class Servizi {
 	ClienteDAO cDAO = new ClienteDAO();
 	DipendenteDAO dDAO = new DipendenteDAO();
 	UtenteDAO uDAO = new UtenteDAO();
+	UtenteHelpDAO hDAO = new UtenteHelpDAO();
 	
 	public boolean initialize(Utente u){
 		
@@ -104,5 +107,10 @@ public class Servizi {
 			return cDAO.aggiornaCliente((Cliente)o, email);
 		}
 		return false;
+	}
+
+	public boolean addHelp(UtenteHelp u) {
+		
+		return hDAO.aggiungiHelp(u);
 	}
 }

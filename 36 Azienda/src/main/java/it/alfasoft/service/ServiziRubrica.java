@@ -1,7 +1,6 @@
 package it.alfasoft.service;
 
 import java.util.List;
-
 import it.alfasoft.bean.Voce;
 import it.alfasoft.dao.VoceDAO;
 
