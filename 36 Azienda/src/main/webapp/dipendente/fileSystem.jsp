@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
+<link rel="stylesheet" href="${pageContext.request.contextPath}/font-awesome/css/font-awesome.min.css">
 <c:choose>
 	<c:when test="${utente.getRuolo() == 1 && utente.isValid()}">
 
@@ -35,6 +35,7 @@
 			<div class="row">
 				<div class="box col-md-11" align="center">
 				<label hidden="true" id="temp">${utente.getId()}</label>
+				
 					<div class="box-inner">
 						<div class="box-header well">
 							<h2>
@@ -56,6 +57,7 @@
 						</div>
 						<div class="box-content row">
 							<div class="col-lg-7 col-md-12"></div>
+							<i class="fa fa-camera-retro fa-4x"></i>
 						</div>
 					</div>
 				</div>

@@ -14,7 +14,7 @@ public class CartelleDAO {
 		
 		Session session = HibernateUtil.openSession();
 
-		String hql = "FROM Cartella WHERE idProprietario = :id";
+		String hql = "FROM Cartella WHERE idProprietario_id = :id";
 
 		Transaction tx = null;
 		List<Cartella> result = null;
@@ -33,6 +33,30 @@ public class CartelleDAO {
 		} finally {
 			session.close();
 		}
+		return result;
+	}
+
+	public boolean aggiungiCartella(Cartella cartella) {
+		
+		Session session = HibernateUtil.openSession();
+		
+		Transaction tx = null;
+		boolean result = false;
+		
+		try {
+			
+			tx = session.getTransaction();
+			tx.begin();
+			session.persist(cartella);
+			tx.commit();
+			result = true;
+		
+		}catch (Exception e){
+			tx.rollback();
+		}finally{
+			session.close();
+		}
+		
 		return result;
 	}
 

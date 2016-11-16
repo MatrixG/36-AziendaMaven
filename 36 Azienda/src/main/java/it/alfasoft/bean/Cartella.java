@@ -1,6 +1,7 @@
 package it.alfasoft.bean;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,7 +33,9 @@ public class Cartella implements Serializable {
 	private List<Cartella> figli;
 
 	public Cartella() {
-
+		
+		figli = new ArrayList<Cartella>();
+		
 	}
 
 	public int getId() {

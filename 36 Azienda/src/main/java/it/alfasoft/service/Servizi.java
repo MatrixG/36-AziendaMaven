@@ -108,6 +108,10 @@ public class Servizi {
 		}
 		return false;
 	}
+	
+	public Utente getUtenteFromId (int idUtente){
+		return uDAO.getUtenteFromId(idUtente);
+	}
 
 	public boolean addHelp(UtenteHelp u) {
 		

@@ -164,4 +164,28 @@ public class UtenteDAO {
 
 		return result;
 	}
+
+	public Utente getUtenteFromId(int idUtente) {
+		
+		Session session = HibernateUtil.openSession();
+		String hql = "From Utente Where id = :id";
+		Transaction tx = null;
+		Utente result = null;
+
+		try {
+
+			tx = session.getTransaction();
+			tx.begin();
+			Query query = session.createQuery(hql);
+			query.setParameter("id", idUtente);
+			result = (Utente) query.uniqueResult();
+			tx.commit();
+
+		} catch (Exception e) {
+			tx.rollback();
+		} finally {
+			session.close();
+		}
+		return result;
+	}
 }
