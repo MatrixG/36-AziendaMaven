@@ -10,7 +10,7 @@ import it.alfasoft.utils.HibernateUtil;
 public class CartelleDAO {
 
 	@SuppressWarnings("unchecked")
-	public List<Cartella> getRootId(int userId) {
+	public List<Cartella> getCartelleUtente(int userId) {
 		
 		Session session = HibernateUtil.openSession();
 
@@ -50,6 +50,33 @@ public class CartelleDAO {
 			session.persist(cartella);
 			tx.commit();
 			result = true;
+		
+		}catch (Exception e){
+			tx.rollback();
+		}finally{
+			session.close();
+		}
+		
+		return result;
+	}
+	
+	public Cartella getRootFolder(int userId){
+		
+Session session = HibernateUtil.openSession();
+		
+		Transaction tx = null;
+		Cartella result = null;
+		String hql = "FROM Cartella Where idProprietario_id = :id and id = padre_id";
+		
+		try {
+			
+			tx = session.getTransaction();
+			tx.begin();
+			Query query = session.createQuery(hql);
+			query.setParameter("id", userId);
+			result = (Cartella) query.uniqueResult();
+			tx.commit();
+			
 		
 		}catch (Exception e){
 			tx.rollback();

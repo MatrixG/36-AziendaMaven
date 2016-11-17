@@ -12,10 +12,10 @@ public class ServiziCartelle {
 	
 	public List<Cartella> getCartelle(int userId) {
 		
-		return cDAO.getRootId(userId);
+		return cDAO.getCartelleUtente(userId);
 	}
 
-	public List<Cartella> aggiungiRoot(int userId) {
+	public Cartella aggiungiRoot(int userId) {
 		
 		Servizi serv = new Servizi();
 		Utente u = serv.getUtenteFromId(userId);
@@ -24,9 +24,13 @@ public class ServiziCartelle {
 		cartella.setPadre(cartella);
 		cartella.setIdProprietario(u);
 		if (cDAO.aggiungiCartella(cartella)){
-			return cDAO.getRootId(userId);
+			return cDAO.getRootFolder(userId);
 		}
 		return null;
+	}
+	
+	public Cartella getRootFolder(int userId){
+		return cDAO.getRootFolder(userId);
 	}
 
 }

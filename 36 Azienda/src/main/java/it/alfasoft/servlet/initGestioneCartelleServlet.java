@@ -3,6 +3,8 @@ package it.alfasoft.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,18 +27,25 @@ public class initGestioneCartelleServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		JsonObject jobj = new JsonObject();
 		
-		List <Cartella> cartelle = service.getCartelle(userId);
-		if (cartelle == null){
+		Cartella root = service.getRootFolder(userId);
+		if (root == null){
 			
-			cartelle = service.aggiungiRoot(userId);
+			root = service.aggiungiRoot(userId);
+			
 		}
 		
-		
-		if (cartelle != null) {
+		List <Cartella> cartelle = service.getCartelle(userId);
+		if (cartelle != null && !cartelle.isEmpty()) {
+			
+			Map<String, Cartella> TreeMapFolder = new TreeMap<String, Cartella>();
+			for (Cartella c : cartelle){
+				TreeMapFolder.put(c.getNome()+c.getPadre().getId(), c);
+
+			}
 			
 			HttpSession session = request.getSession();
-			session.setAttribute("listaCartelle", cartelle);
-			
+			session.setAttribute("listaCartelle", TreeMapFolder);
+			jobj.addProperty("parentId", root.getId());
 			jobj.addProperty("success", true);
 			
 		} else {

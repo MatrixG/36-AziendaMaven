@@ -4,16 +4,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/font-awesome/css/font-awesome.min.css">
 <c:choose>
 	<c:when test="${utente.getRuolo() == 1 && utente.isValid()}">
 
-<html>
+		<html>
 <head>
 <jsp:include page="../block/header.jsp"></jsp:include>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/dipendente/js/gestioneCartelle.js"></script>
-</head>	
+</head>
 </head>
 
 <body>
@@ -33,9 +34,9 @@
 			</div>
 
 			<div class="row">
-				<div class="box col-md-11" align="center">
-				<label hidden="true" id="temp">${utente.getId()}</label>
-				
+				<div class="box col-md-9 center">
+					<label hidden="true" id="temp">${utente.getId()}</label>
+					<label hidden="true" id="parentId"></label>
 					<div class="box-inner">
 						<div class="box-header well">
 							<h2>
@@ -44,10 +45,10 @@
 						</div>
 						<div class="box-content row">
 							<div class="col-sm-8">
-								<button id = "createFolder" class="btn btn-default btn-sm">
+								<button id="createFolder" class="btn btn-default btn-sm">
 									<i class="glyphicon glyphicon-plus"></i> Aggiungi Cartella
 								</button>
-								<button id = "deleteFolder" class="btn btn-default btn-sm">
+								<button id="deleteFolder" class="btn btn-default btn-sm">
 									<i class="glyphicon glyphicon-trash"></i> Elimina Cartella
 								</button>
 								<button class="btn btn-default btn-sm">
@@ -55,20 +56,29 @@
 								</button>
 							</div>
 						</div>
+					</div>
+					<div class="box-inner">
+						<div class="box-header well">
+							<div class="col-sm-8">
+								<h2 id = "directory">Double click to select</h2>
+							</div>
+
+						</div>
 						<div class="box-content row">
-							<div class="col-lg-7 col-md-12"></div>
-							<i class="fa fa-camera-retro fa-4x"></i>
+						<br/>
+							<div class="col-sm-2">
+								<i id = "root" class="fa fa-folder fa-3x"></i><h6>root</h6>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!--/#content.col-md-0-->
 
 	</div>
 
-	<div class="modal fade" id="modalCreateFolder" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal fade" id="modalCreateFolder" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
 		<div class="modal-dialog">
 			<div class="modal-content">
