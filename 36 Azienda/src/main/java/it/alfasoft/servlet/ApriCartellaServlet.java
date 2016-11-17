@@ -12,7 +12,6 @@ import javax.servlet.http.HttpSession;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import it.alfasoft.bean.Cartella;
 import it.alfasoft.bean.CartellaJSON;
 
@@ -47,6 +46,7 @@ public class ApriCartellaServlet extends HttpServlet{
 				temp.setNome(c.getNome());
 				JsonElement jsel = gson.toJsonTree(temp);
 				jArray.add(gson.toJsonTree(jsel));
+				
 			}
 			
 		} else {

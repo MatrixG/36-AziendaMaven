@@ -35,8 +35,8 @@
 
 			<div class="row">
 				<div class="box col-md-9 center">
-					<label hidden="true" id="temp">${utente.getId()}</label>
-					<label hidden="true" id="parentId"></label>
+					<label hidden="true" id="temp">${utente.getId()}</label> <label
+						hidden="true" id="parentId"></label>
 					<div class="box-inner">
 						<div class="box-header well">
 							<h2>
@@ -60,14 +60,15 @@
 					<div class="box-inner">
 						<div class="box-header well">
 							<div class="col-sm-8">
-								<h2 id = "directory">Double click to select</h2>
+								<h2 id="directory">Double click to select</h2>
 							</div>
 
 						</div>
-						<div class="box-content row">
-						<br/>
-							<div class="col-sm-2">
-								<i id = "root" class="fa fa-folder fa-3x"></i><h6>root</h6>
+						<div id="folderDiv" class="box-content row">
+							<br />
+							<div class="col-sm-2 folderClass">
+								<i id="root" class="fa fa-folder fa-3x"></i>
+								<h6>root</h6>
 							</div>
 						</div>
 					</div>
