@@ -39,12 +39,14 @@ public class initGestioneCartelleServlet extends HttpServlet {
 			
 			Map<String, Cartella> TreeMapFolder = new TreeMap<String, Cartella>();
 			for (Cartella c : cartelle){
+//				System.out.println(c.getNome() + " id->" + c.getId() + " SizeFifli->" + c.getFigli().size() + " idPadre->" + c.getPadre().getId());
 				TreeMapFolder.put(c.getNome()+c.getPadre().getId(), c);
 
 			}
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("listaCartelle", TreeMapFolder);
+			jobj.addProperty("parentKey", root.getNome() + root.getId());
 			jobj.addProperty("parentId", root.getId());
 			jobj.addProperty("success", true);
 			

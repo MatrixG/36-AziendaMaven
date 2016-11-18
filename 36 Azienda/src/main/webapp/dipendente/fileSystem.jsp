@@ -36,7 +36,8 @@
 			<div class="row">
 				<div class="box col-md-9 center">
 					<label hidden="true" id="temp">${utente.getId()}</label> <label
-						hidden="true" id="parentId"></label>
+						hidden="true" id="parentId"></label><label
+						hidden="true" id="parentKey"></label>
 					<div class="box-inner">
 						<div class="box-header well">
 							<h2>
@@ -51,7 +52,7 @@
 								<button id="deleteFolder" class="btn btn-default btn-sm">
 									<i class="glyphicon glyphicon-trash"></i> Elimina Cartella
 								</button>
-								<button class="btn btn-default btn-sm">
+								<button id = "upFolder" class="btn btn-default btn-sm">
 									<i class="glyphicon glyphicon-arrow-up"></i> Cartella Superiore
 								</button>
 							</div>
