@@ -33,4 +33,10 @@ public class ServiziCartelle {
 		return cDAO.getRootFolder(userId);
 	}
 
+	public boolean aggiungiCartella(Cartella nuova, Cartella padre) {
+		
+		return cDAO.aggiungiCartella(nuova, padre);
+		
+	}
+
 }
