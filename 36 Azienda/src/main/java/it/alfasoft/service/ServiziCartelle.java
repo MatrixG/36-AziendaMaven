@@ -30,13 +30,17 @@ public class ServiziCartelle {
 	}
 	
 	public Cartella getRootFolder(int userId){
+		
 		return cDAO.getRootFolder(userId);
 	}
 
 	public boolean aggiungiCartella(Cartella nuova, Cartella padre) {
 		
-		return cDAO.aggiungiCartella(nuova, padre);
-		
+		return cDAO.aggiungiCartella(nuova, padre);	
+	}
+	
+	public Cartella getFolder(String nome, int idPadre){
+		return cDAO.getFolder(nome, idPadre);
 	}
 
 }

@@ -36,8 +36,8 @@
 			<div class="row">
 				<div class="box col-md-9 center">
 					<label hidden="true" id="temp">${utente.getId()}</label> <label
-						hidden="true" id="parentId"></label><label
-						hidden="true" id="parentKey"></label>
+						hidden="true" id="parentId"></label><label hidden="true"
+						id="folderKey"></label>
 					<div class="box-inner">
 						<div class="box-header well">
 							<h2>
@@ -52,7 +52,7 @@
 								<button id="deleteFolder" class="btn btn-default btn-sm">
 									<i class="glyphicon glyphicon-trash"></i> Elimina Cartella
 								</button>
-								<button id = "upFolder" class="btn btn-default btn-sm">
+								<button id="upFolder" class="btn btn-default btn-sm">
 									<i class="glyphicon glyphicon-arrow-up"></i> Cartella Superiore
 								</button>
 							</div>
@@ -73,6 +73,8 @@
 							</div>
 						</div>
 					</div>
+					<div hidden="true" class="alert alert-success"></div>
+					<div hidden="true" class="alert alert-warning"></div>
 				</div>
 			</div>
 		</div>
@@ -97,7 +99,8 @@
 				</div>
 				<div class="modal-footer">
 					<a href="#" class="btn btn-default" data-dismiss="modal">Annulla</a>
-					<a href="#" class="btn btn-primary" data-dismiss="modal">Crea</a>
+					<a href="#" id="creaButton" class="btn btn-primary"
+						data-dismiss="modal">Crea</a>
 				</div>
 			</div>
 		</div>

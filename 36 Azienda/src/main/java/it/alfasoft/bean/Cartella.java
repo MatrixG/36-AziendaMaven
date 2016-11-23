@@ -3,6 +3,8 @@ package it.alfasoft.bean;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -30,7 +32,7 @@ public class Cartella implements Serializable {
 	@OneToOne
 	private Cartella padre;
 	
-	@OneToMany (fetch = FetchType.EAGER)
+	@OneToMany (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Cartella> figli;
 
 	public Cartella() {

@@ -15,7 +15,7 @@ $(document).ready(function() {
 			if (data.success) {
 				
 				$('#parentId').text(data.parentId);
-				$('#parentKey').text(data.parentKey);
+				$('#folderKey').text(data.folderKey);
 				
 			} else {
 
@@ -31,21 +31,92 @@ $(document).ready(function() {
 	
 	$('#createFolder').click(function(){
 		
-		$('#modalCreateFolder').modal('show').on("click", ".btn-primary", function() {	
-		});
+		$('#inputNome').val('');
+		$('#modalCreateFolder').modal('show');
 	});
+	
+	$('#creaButton').click(function (){
+		
+		$('#modalCreateFolder').modal('hide');
+		
+		$.ajax({
+
+			type : "POST",
+			url : "creaCartella",
+			data : {
+				key : $('#folderKey').text(),
+				userId : $('#temp').text(),
+				newName : $('#inputNome').val()
+			},
+
+			dataType : "JSON",
+
+			success : function(data, txtStatus, jqXHR) {
+				
+				var dim = data.length;
+				var message = data[0];
+				if (message.localeCompare('ok') == 0){
+					
+					$('#folderDiv').empty();
+					$('#folderDiv').append('<br/>');
+					for (var i = 1; i < dim; i++){
+						$('#folderDiv').append('<div class="col-sm-2"><i id = "'+ data[i].nome +'" class="fa fa-folder fa-3x"></i><h6>' + data[i].nome + '</h6></div>');
+					
+					}
+					$(".alert-success").empty();
+					$(".alert-success").append('<strong>Cartella Creata!</strong>');
+					$(".alert-success").fadeIn("slow");
+					
+					var counter = 0;
+					var id;
+															
+					id = setInterval(function() {
+					counter++;
+					if (counter > 6) {
+						clearInterval(id);
+						$(".alert-success").fadeOut("slow");
+					}}, 1000);
+				}else{
+					
+					$(".alert-warning").empty();
+					$(".alert-warning").append('<strong>'+ data[0] +'</strong>');
+					$(".alert-warning").fadeIn("slow");
+					
+					var counter = 0;
+					var id;
+															
+					id = setInterval(function() {
+					counter++;
+					if (counter > 6) {
+						clearInterval(id);
+						$(".alert-warning").fadeOut("slow");
+					}}, 1000);
+					
+				}
+
+			
+			},
+			error : function(jqXHR, txtStatus, erroreLanciato) {
+
+				console.log("ajax error: " + txtStatus);
+				
+			}
+		})
+	});
+	
+	
 
 	$('#folderDiv').on("dblclick", "i.fa-folder" ,function(){
 		
 //		$(this).next().text('esempio');
-		$('#parentKey').text($(this).next().text() + $('#parentId').text());
+		$('#folderKey').text($(this).next().text() + $('#parentId').text());
 		
 		$.ajax({
 
 			type : "POST",
 			url : "apriCartella",
 			data : {
-				key : $('#parentKey').text()
+				key : $('#folderKey').text()
 			},
 
 			dataType : "JSON",
@@ -75,7 +146,7 @@ $(document).ready(function() {
 			type : "POST",
 			url : "cartellaSuperiore",
 			data : {
-				key : $('#parentKey').text()
+				key : $('#folderKey').text()
 			},
 
 			dataType : "JSON",
@@ -87,7 +158,7 @@ $(document).ready(function() {
 				$('#folderDiv').empty();
 				$('#folderDiv').append('<br/>');
 				$('#parentId').text(data[0]);
-				$('#parentKey').text(data[1]);
+				$('#folderKey').text(data[1]);
 				for (var i = 2; i < dim; i++){
 					$('#folderDiv').append('<div class="col-sm-2"><i id = "'+ data[i].nome +'" class="fa fa-folder fa-3x"></i><h6>' + data[i].nome + '</h6></div>');
 				}

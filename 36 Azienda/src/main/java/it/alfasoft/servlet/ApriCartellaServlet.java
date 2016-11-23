@@ -31,7 +31,6 @@ public class ApriCartellaServlet extends HttpServlet{
 		
 		//Chiave della cartella a cui voglio accedere
 		String key = request.getParameter("key");
-		System.out.println(key);
 		
 		//Cartella che diventerà il nuovo padre
 		Cartella destFolder = cartelle.get(key);
@@ -40,6 +39,7 @@ public class ApriCartellaServlet extends HttpServlet{
 			
 			//Inserisco l'id del nuovo padre
 			jArray.add(destFolder.getId());
+			
 			//Ritorno un lista json array di figli del nuovo padre
 			for (Cartella c : destFolder.getFigli()){
 				
