@@ -36,15 +36,6 @@ public class CreaCartellaServlet extends HttpServlet {
 		String cartellaAperta = request.getParameter("key");
 		String newName = request.getParameter("newName");
 		int userId = Integer.parseInt(request.getParameter("userId"));
-		
-		//Controllo che la cartella aperta non sia il root
-		if (cartelle.get(cartellaAperta).getNome().equals("root")){
-			
-			jArray.add("Non e' possibile aggiungere al di fuori di root!");
-			out.println(jArray.toString());
-			out.close();
-			return;
-		}
 
 		//Controllo che la cartella non esista già
 		for (Cartella c : cartelle.get(cartellaAperta).getFigli()){

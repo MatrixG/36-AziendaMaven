@@ -9,12 +9,20 @@
 <c:choose>
 	<c:when test="${utente.getRuolo() == 1 && utente.isValid()}">
 
-		<html>
+<html>
 <head>
-<jsp:include page="../block/header.jsp"></jsp:include>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/dipendente/js/gestioneCartelle.js"></script>
-</head>
+	<jsp:include page="../block/header.jsp"></jsp:include>
+	<script type="text/javascript"
+		src="${pageContext.request.contextPath}/dipendente/js/gestioneCartelle.js"></script>
+	
+	<style>
+	
+	.myDiv {
+	
+		background-color: orange;
+	}
+	
+	</style>
 </head>
 
 <body>
@@ -45,15 +53,27 @@
 							</h2>
 						</div>
 						<div class="box-content row">
-							<div class="col-sm-8">
-								<button id="createFolder" class="btn btn-default btn-sm">
+							<div class="col-sm-8 myDiv">
+								<button id="createFolder" class="btn btn-success btn-sm">
 									<i class="glyphicon glyphicon-plus"></i> Aggiungi Cartella
 								</button>
-								<button id="deleteFolder" class="btn btn-default btn-sm">
+								<button id="deleteFolder" class="btn btn-danger btn-sm">
 									<i class="glyphicon glyphicon-trash"></i> Elimina Cartella
 								</button>
-								<button id="upFolder" class="btn btn-default btn-sm">
+								<button id="upFolder" class="btn btn-info btn-sm">
 									<i class="glyphicon glyphicon-arrow-up"></i> Cartella Superiore
+								</button>
+							</div>
+							<div class="col-sm-6">
+
+								<button id="selectAll" class="btn btn-primary btn-sm">
+									<i class="glyphicon glyphicon-plus"></i> Seleziona Tutto
+								</button>
+								<button id="Annulla" class="btn btn-primary btn-sm">
+									<i class="glyphicon glyphicon-trash"></i> Annulla
+								</button>
+								<button id="Cancella" class="btn btn-primary btn-sm">
+									<i class="glyphicon glyphicon-arrow-up"></i> Cancella
 								</button>
 							</div>
 						</div>
@@ -61,16 +81,12 @@
 					<div class="box-inner">
 						<div class="box-header well">
 							<div class="col-sm-8">
-								<h2 id="directory">Double click to select</h2>
+								<h2 id="directory"></h2>
 							</div>
 
 						</div>
 						<div id="folderDiv" class="box-content row">
 							<br />
-							<div class="col-sm-2 folderClass">
-								<i id="root" class="fa fa-folder fa-3x"></i>
-								<h6>root</h6>
-							</div>
 						</div>
 					</div>
 					<div hidden="true" class="alert alert-success"></div>

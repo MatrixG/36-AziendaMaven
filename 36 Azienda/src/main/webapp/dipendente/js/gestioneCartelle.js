@@ -12,10 +12,18 @@ $(document).ready(function() {
 
 		success : function(data, txtStatus, jqXHR) {
 
-			if (data.success) {
+			if (data[0].success) {
 				
-				$('#parentId').text(data.parentId);
-				$('#folderKey').text(data.folderKey);
+				var dim = data.length;
+				$('#parentId').text(data[0].parentId);
+				$('#folderKey').text(data[0].folderKey);
+				$('#directory').text("root");
+				$('#folderDiv').empty();
+				$('#folderDiv').append('<br/>');
+				
+				for (var i = 1; i < dim; i++){
+					$('#folderDiv').append('<div class="col-sm-2"><i id = "'+ data[i].nome +'" class="fa fa-folder fa-3x"></i><h6>' + data[i].nome + '</h6></div>');
+				}
 				
 			} else {
 
@@ -110,6 +118,7 @@ $(document).ready(function() {
 		
 //		$(this).next().text('esempio');
 		$('#folderKey').text($(this).next().text() + $('#parentId').text());
+		$('#directory').text($('#directory').text() + " \\ " + $(this).next().text());
 		
 		$.ajax({
 
@@ -124,7 +133,9 @@ $(document).ready(function() {
 			success : function(data, txtStatus, jqXHR) {
 				
 				var dim = data.length;
-
+//				console.log($(this).next().text());
+				
+				
 				$('#folderDiv').empty();
 				$('#folderDiv').append('<br/>');
 				$('#parentId').text(data[0]);
@@ -141,6 +152,18 @@ $(document).ready(function() {
 	
 	$('#upFolder').click(function() {
 		
+		var len = $('#directory').text().length;
+		var dir = $('#directory').text();
+		if ($('#directory').text().localeCompare("root") != 0){
+		
+			while (dir.charAt(len - 1) != "\\"){
+				len--;
+			}
+			dir = dir.substr(0, len - 2);
+			$('#directory').text(dir);
+		}
+		
+
 		$.ajax({
 
 			type : "POST",
@@ -168,6 +191,15 @@ $(document).ready(function() {
 				console.log("ajax error: " + txtStatus);
 			}
 		})
+		
+	});
+	
+	$('#deleteFolder').click(function(){
+		
+		var children = $('#folderDiv').children('div').each(function(){
+			
+			$(this).prepend('<input type="checkbox" />&nbsp;');
+		});
 		
 	});
 });
